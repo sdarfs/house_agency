@@ -1,0 +1,20 @@
+<%- include('../layout/base/top', {title: title, isWorker: true}); %>
+
+<form method="post" action="" class="bg-white p-4 w-fit rounded">
+    <div class="flex mb-4 items-center flex-wrap gap-6 w-[60rem]">
+        <h1 class="font-semibold text-2xl">Документ <%= doc.docNumber %></h1>
+    </div>
+
+    <% fields.map((field) => { %>
+        <div class="mb-4">
+            <label for="<%= field.name %>" class="mb-2"><%= field.label %></label>
+            <%- include('../components/input/base', {placeholder: field.label, id: `${doc.id}--${field.id}`, value: field.Field}) %>
+        </div>
+    <% }) %>
+
+    <div class="flex gap-4 mt-4">
+        <%- include('../components/button/primary', {text: 'Сохранить изменения', type: 'submit'}) %>
+    </div>
+</form>
+
+<%- include('../layout/base/bottom'); -%>

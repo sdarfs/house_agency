@@ -1,0 +1,25 @@
+<tr>
+    <td class="py-4 px-11"><%= request.number %></td>
+    <td class="py-4 px-11">
+        <% if (request.requestTypeName) { %>
+            <%= request.requestTypeName %>
+        <% } %>
+    </td>
+    <td class="py-4 px-11">
+        <% if (request.requestStateName === 'Открыт') { %>
+            <%- include('../components/badge/success') -%>
+        <% } else if (request.requestStateName === 'Закрыт') { %>
+                <%- include('../components/badge/danger') -%>
+        <% } else if (request.requestStateName === 'Закончен') { %>
+                <%- include('../components/badge/default') -%>
+        <% } else if (request.requestStateName === 'В обработке') { %>
+                <%- include('../components/badge/inprogress') -%>
+            <% }
+
+
+            %>
+    </td>
+    <td class="py-4 px-11 w-fit text-right">
+        <a class="text-blue-500 underline" href="/requests/<%= request.id %>">Открыть</a>
+    </td>
+</tr>

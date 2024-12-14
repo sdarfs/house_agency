@@ -1,0 +1,6 @@
+<%- include('../layout/base/top', {title: title, isWorker: isWorker}); %>
+
+<h1 class="font-semibold text-3xl mb-2"><%= title %></h1>
+<%- include('../myRequestsTable/table', {requests: requests}); -%>
+
+<%- include('../layout/base/bottom'); -%>

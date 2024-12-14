@@ -1,0 +1,8 @@
+<table class="table-auto drop-shadow w-full rounded-xl overflow-hidden divide-y">
+    <%- include('head') -%>
+    <tbody class="bg-white divide-y">
+    <% requests.map(request => {  %>
+        <%- include('row', {request: request}) -%>
+    <% }) %>
+    </tbody>
+</table>

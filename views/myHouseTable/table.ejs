@@ -1,0 +1,8 @@
+<table class="table-auto drop-shadow w-full rounded-xl overflow-hidden divide-y">
+    <%- include('head') -%>
+    <tbody class="bg-white divide-y">
+    <% houses.map(house => {  %>
+        <%- include('row', {house: house}) -%>
+    <% }) %>
+    </tbody>
+</table>

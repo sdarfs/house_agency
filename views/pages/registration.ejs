@@ -1,0 +1,15 @@
+<%- include('../layout/empty/top', {title: title}); -%>
+
+<form method="post" action="/registration" class="bg-white p-16 rounded flex flex-col gap-5 relative min-h-128">
+    <h2 class="text-center font-semibold text-2xl w-72 block">Регистрация</h2>
+    <%- include('../components/input/base', {id: 'surname', placeholder: 'Фамилия', required: true}); -%>
+    <%- include('../components/input/base', {id: 'name', placeholder: 'Имя', required: true}); -%>
+    <%- include('../components/input/base', {id: 'secondName', placeholder: 'Отчество'}); -%>
+    <%- include('../components/input/base', {id: 'email', placeholder: 'Email', required: true}); -%>
+    <%- include('../components/input/base', {id: 'password', placeholder: 'Пароль', required: true}); -%>
+    <%- include('../components/input/base', {id: 'passwordRepeat', placeholder: 'Повторите пароль', required: true}); -%>
+    <%- include('../components/button/primary', {text: 'Зарегистрироваться', type: 'submit'}); -%>
+    <a href="/login" class="font-medium text-center text-black">Вход</a>
+</form>
+
+<%- include('../layout/empty/bottom'); -%>

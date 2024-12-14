@@ -1,0 +1,24 @@
+<%- include('../layout/base/top', {title: title, isWorker: isWorker}); %>
+
+<form method="post" action="/requests/<%= request.id %>/choose-worker" class="bg-white p-4 w-fit rounded">
+    <div class="flex mb-4 items-center flex-wrap gap-6 w-[60rem]">
+        <h1 class="font-semibold text-2xl">Сменить исполнителя</h1>
+    </div>
+    <div class="w-64">
+        <label for="worker" class="block mb-2 text-sm font-medium text-gray-900">Исполнитель:</label>
+        <select required id="worker" name="worker" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+            <option disabled>Выберете исполнителя</option>
+            <% workers.map(worker => { %>
+            <option value="<%= worker.id %>"><%= worker.surname %> <%= worker.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="flex gap-4 mt-4">
+        <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}) %>
+        <a href="/requests/<%= request.id %>">
+            <%- include('../components/button/outline', {text: 'Отменить'}) %>
+        </a>
+    </div>
+</form>
+
+<%- include('../layout/base/bottom'); -%>

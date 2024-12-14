@@ -1,0 +1,25 @@
+<%- include('../layout/base/top', {title: title, isWorker: true}); %>
+
+<form method="post" action="" class="bg-white p-4 w-fit rounded">
+    <div class="flex mb-4 items-center flex-wrap gap-6 w-[60rem]">
+        <h1 class="font-semibold text-2xl">Новый документ</h1>
+    </div>
+    <%- include('../components/input/base', {placeholder: 'Номер документа', id: 'docNumber', required: true}) %>
+    <div class="w-64 mt-4">
+        <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Тип запроса:</label>
+        <select required id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+            <option disabled>Выберете тип документа</option>
+            <% types.map((type) => { %>
+                <option value="<%= type.id %>"><%= type.fileName %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="flex gap-4 mt-4">
+        <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}) %>
+        <a href="/">
+            <%- include('../components/button/outline', {text: 'Отменить'}) %>
+        </a>
+    </div>
+</form>
+
+<%- include('../layout/base/bottom'); -%>

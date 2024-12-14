@@ -1,0 +1,71 @@
+<%- include('../layout/base/top', {title: title, isWorker: isWorker}); %>
+
+<form method="post" action="/houses/new" enctype="multipart/form-data" class="bg-white p-4 w-fit rounded">
+    <div class="flex mb-4 items-center flex-wrap gap-6 w-[60rem]">
+        <h1 class="font-semibold text-2xl">Новый дом</h1>
+    </div>
+    <textarea
+            id="details"
+            name="details"
+            required
+            rows="10"
+            class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300
+                focus:outline-none focus:ring-blue-500 focus:border-blue-500
+                invalid:border-red-500 invalid:text-red-600"
+            placeholder="Описание"
+    ></textarea>
+    <div class="flex gap-4 my-4">
+        <div class="w-64">
+            <label for="city" class="block mb-2 text-sm font-medium text-gray-900">Город:</label>
+            <select id="city" name="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+                <option disabled>Выберете город</option>
+                <% cities.map(city => {  %>
+                    <option value="<%= city.id %>"><%= city.name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="w-64">
+            <label for="district" class="block mb-2 text-sm font-medium text-gray-900">Район:</label>
+            <select id="district" name="district" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+                <option disabled>Выберете район</option>
+                <% districts.map(district => {  %>
+                    <option value="<%= district.id %>"><%= district.Name %></option>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <%- include('../components/input/base', {placeholder: 'Адрес', id: 'address'}) %>
+    <div class="flex gap-4 my-4">
+        <div class="w-64">
+            <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Тип:</label>
+            <select id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+                <option disabled>Выберете тип</option>
+                <% houseTypes.map(houseType => {  %>
+                    <option value="<%= houseType.id %>"><%= houseType.name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="w-64">
+            <label for="purpose" class="block mb-2 text-sm font-medium text-gray-900">Назначение:</label>
+            <select id="purpose" name="purpose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+                <option disabled>Выберете назначение</option>
+                <% housePurposes.map(housePurpose => {  %>
+                    <option value="<%= housePurpose.id %>"><%= housePurpose.name %></option>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <div class="flex gap-4 my-4">
+        <%- include('../components/input/base', {placeholder: 'Цена', id: 'cost'}) %>
+        <%- include('../components/input/base', {placeholder: 'Площадь', id: 'area'}) %>
+        <%- include('../components/input/base', {placeholder: 'Количество комнат', id: 'roomCount'}) %>
+    </div>
+    <div class="flex gap-4 mt-4">
+        <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}) %>
+        <a href="/">
+            <%- include('../components/button/outline', {text: 'Отменить'}) %>
+        </a>
+    </div>
+</form>
+
+<%- include('../layout/base/bottom'); -%>

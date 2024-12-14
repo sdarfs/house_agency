@@ -1,0 +1,92 @@
+<%- include('../layout/base/top', {title: title, isWorker: isWorker}); %>
+
+<div class="bg-white p-4 w-fit rounded">
+    <div class="flex mb-4 items-center flex-wrap gap-6">
+        <h1 class="font-semibold text-3xl">Запрос <%= request.number %></h1>
+        <% if (request.status === 'Открыт') { %>
+            <%- include('../components/badge/success') -%>
+        <% } else if (request.status === 'Закрыт') { %>
+            <%- include('../components/badge/danger') -%>
+        <% } else if (request.status === 'Закончен') { %>
+            <%- include('../components/badge/default') -%>
+        <% }
+        else if (request.status === 'В обработке') { %>
+            <%- include('../components/badge/inprogress') -%>
+        <% }
+
+
+        %>
+    </div>
+
+    <div class="flex mb-4 items-center flex-wrap gap-6">
+        <span class="text-sm text-gray-400">
+            Создан: <span><%= request.createStamp %></span>
+        </span>
+        <span class="text-sm text-gray-400">
+            Обновлен: <span><%= request.statusUpdateStamp %></span>
+        </span>
+        <% if (request.closeStamp) { %>
+        <span class="text-sm text-gray-400">
+            Закрыт: <span><%= request.closeStamp %></span>
+        </span>
+        <% } %>
+    </div>
+
+    <% if (isWorker) { %>
+    <div class="flex gap-4 mb-4">
+        <% if (request.status === 'Открыт') { %>
+            <a class="text-blue-500 underline" href="/requests/<%= request.id %>/finish">Закончить</a>
+            <a class="text-blue-500 underline" href="/requests/<%= request.id %>/close">Закрыть</a>
+            <a class="text-blue-500 underline" href="/requests/<%= request.id %>/choose-worker">Назначить</a>
+        <% } %>
+            <% if (request.status === 'В обработке') { %>
+                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/finish">Закончить</a>
+                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/close">Закрыть</a>
+                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/choose-worker">Назначить</a>
+            <% } %>
+            <a class="text-red-500 underline" href="/requests/<%= request.id %>/delete">Удалить</a>
+    </div>
+    <% } %>
+
+    <div class="flex gap-16">
+        <div class="w-[45rem]">
+            <p><%= request.details %></p>
+            <% if (isWorker) { %>
+            <div class="flex flex-col gap-1 mt-4">
+                <h6 class="font-semibold">Документы:</h6>
+                <% documents.map(doc => { %>
+                <span>
+                    <a class="text-blue-500" href="/requests/<%= request.id %>/document/<%= doc.id %>"><%= doc.docNumber %></a>
+                    <span class="text-gray-400 font-light">(<%= doc.createStamp %>)</span>
+                </span>
+                <% }) %>
+                <div class="flex gap-4 mt-2">
+                    <a class="text-blue-500 underline" href="/requests/<%= request.id %>/document/new">Создать документ</a>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <div class="flex flex-col gap-2">
+                <span class="flex">
+                    <span class="text-gray-400 w-32 block">Клиент:</span>
+                    <span><%= request.clientSurname %> <%= request.clientName %></span>
+                </span>
+                <span class="flex">
+                    <span class="text-gray-400 w-32 block">Отдел:</span>
+                    <span><%= request.departmentName %></span>
+                </span>
+                <span class="flex">
+                    <span class="text-gray-400 w-32 block">Исполнитель:</span>
+                    <span><%= request.workerSurname %> <%= request.workerName %></span>
+                </span>
+                <% if (request.address?.length) { %>
+                <span class="flex">
+                    <span class="text-gray-400 w-32 block">Объект:</span>
+                    <a href="/houses/<%= request.houseId %>" class="text-blue-500 w-36"><%= request.address %>, <%= request.districtName %>, <%= request.cityName %></a>
+                </span>
+                <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('../layout/base/bottom'); -%>

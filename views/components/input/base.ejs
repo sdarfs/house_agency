@@ -1,0 +1,27 @@
+<div>
+    <% if (locals.label) { %>
+    <label for="<%= id %>" class="block mb-2 text-sm font-medium"><%= label %></label>
+    <% } %>
+    <input
+            type="text"
+            id="<%= id %>"
+            name="<%= id %>"
+            <% if (locals.placeholder) { %>
+            placeholder="<%= placeholder %>"
+            <% } %>
+            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg font-medium
+            focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+            disabled:bg-slate-100 disabled:text-slate-500 disabled:border-slate-100 disabled:shadow-none
+            invalid:border-red-500 invalid:text-red-600
+            block w-full p-2.5"
+            <% if (locals.required) { %>
+            required
+            <% } %>
+            <% if (locals.disabled ) { %>
+            disabled="<%= disabled %>"
+            <% } %>
+            <% if (locals.value ) { %>
+            value="<%= value %>"
+            <% } %>
+    />
+</div>
