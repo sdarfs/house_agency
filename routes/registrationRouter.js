@@ -10,14 +10,24 @@ registrationRouter.get('/', RegistrationController.getRegistrationPage)
 
 registrationRouter.post('/', RegistrationController.registerClient)
 
-registrationRouter.post('/', RegistrationController.update_settings)
-
 
 registrationRouter.get('/worker', isAuth, isWorker, RegistrationController.getRegistrationWorkerPage)
 registrationRouter.get('/worker', isAuth, isWorker, RegistrationController.getRegistrationWorkerPage)
 
 registrationRouter.post('/worker', isAuth, isWorker, RegistrationController.registerWorker)
 registrationRouter.post('/passport', isAuth, isWorker, RegistrationController.registerWorker)
+
+// Маршрут для получения страницы настроек пользователя
+registrationRouter.get('/settings', isAuth, RegistrationController.getUserSettings);
+
+// Маршрут для обновления данных пользователя
+registrationRouter.post('/settings', isAuth, RegistrationController.updateUserSettings);
+
+// Маршрут для получения страницы настроек работника
+registrationRouter.get('/settingsWorker', isAuth, isWorker, RegistrationController.getWorkerSettings);
+
+// Маршрут для обновления данных работника
+registrationRouter.post('/settingsWorker', isAuth,isWorker, RegistrationController.updateWorkerSettings);
 
 
 module.exports = registrationRouter;

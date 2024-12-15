@@ -13,7 +13,6 @@ const houseRouter = require("./routes/houseRouter");
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/static'));
-
 app.use(session({
 	secret: 'nedvizin the best',
 	resave: false,
@@ -21,7 +20,6 @@ app.use(session({
 }))
 
 app.set('view engine', 'ejs');
-
 app.use('/', indexRouter)
 app.use('/login', loginRouter)
 app.use('/registration', registrationRouter)

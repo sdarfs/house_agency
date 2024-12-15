@@ -22,7 +22,7 @@ class LoginController {
 		}
 
 		if (!!worker.rows[0]) {
-			isMatch = await bcrypt.compare(password, client.rows[0].password)
+			isMatch = await bcrypt.compare(password, worker.rows[0].password)
 		}
 
 		if (!isMatch) return res.redirect('/login')

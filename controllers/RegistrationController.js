@@ -39,11 +39,100 @@ class RegistrationController {
 		})
 	}
 
-	static async update_settings(req, res){
-		ClientModel.update(body.id).then(() => {
-			res.redirect('/setiings')
-		})
+	static async getUserSettings(req, res) {
+		const userId = req.session.client.id; // Получаем ID пользователя из сессии
+		try {
+			const user = await ClientModel.getOneById(userId); // Получаем данные пользователя по ID
+			if (user.rows.length > 0) {
+				res.render('pages/settings', { title: 'Настройки пользователя'});
+			} else {
+				res.status(404).send('Пользователь не найден');
+			}
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
 	}
+
+	static async updateUserSettings(req, res) {
+		const userId = req.session.client.id; // Получаем ID пользователя из сессии
+
+		try {
+			// Получаем текущие данные пользователя
+			const currentUser = await ClientModel.getOneById(userId);
+			if (currentUser.rows.length === 0) {
+				return res.status(404).send('Пользователь не найден');
+			}
+
+			const user = currentUser.rows[0];
+
+			// Обновляем только те поля, которые были переданы в форме
+			const updatedData = {
+				surname: req.body.surname || user.surname,
+				name: req.body.name || user.name,
+				secondName: req.body.secondName || user.secondName,
+				phoneNumber: req.body.phoneNumber || user.phoneNumber,
+				email: req.body.email || user.email,
+
+			};
+
+			ClientModel.updateClientById(userId, updatedData).then(() => {
+				res.redirect('/');
+			})// Перенаправляем на страницу настроек после успешного обновления
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
+	}
+
+
+	static async getWorkerSettings(req, res) {
+		const userId = req.session.client.id; // Получаем ID пользователя из сессии
+		try {
+			const user = await WorkerModel.getOneById(userId); // Получаем данные пользователя по ID
+			if (user.rows.length > 0) {
+				res.render('pages/settingsWorker', { title: 'Настройки пользователя'});
+			} else {
+				res.status(404).send('Пользователь не найден');
+			}
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
+	}
+
+	static async updateWorkerSettings(req, res) {
+		const userId = req.session.client.id; // Получаем ID пользователя из сессии
+
+		try {
+			// Получаем текущие данные пользователя
+			const currentUser = await WorkerModel.getOneById(userId);
+			if (currentUser.rows.length === 0) {
+				return res.status(404).send('Пользователь не найден');
+			}
+
+			const user = currentUser.rows[0];
+
+			// Обновляем только те поля, которые были переданы в форме
+			const updatedData = {
+				surname: req.body.surname || user.surname,
+				name: req.body.name || user.name,
+				secondName: req.body.secondName || user.secondName,
+				email: req.body.email || user.email,
+
+			};
+
+			WorkerModel.updateWorkerById(userId, updatedData).then(() => {
+				res.redirect('/');
+			})// Перенаправляем на страницу настроек после успешного обновления
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
+	}
+
+
+
 
 }
 

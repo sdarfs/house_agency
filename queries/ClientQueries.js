@@ -9,15 +9,21 @@ class ClientQueries {
 				values ('${surname}', '${name}', '${secondName}', '${phoneNumber}', '${email}', '${password}')`
 	}
 
-	static update(id, surname, name, secondName, phoneNumber, email, password) {
-		return `update "Client"
-		set "surname" = '${surname}',
-			"name" = '${name}',
+	static updateClientById(surname, name, secondName, phoneNumber, email,  id) {
+		return `UPDATE "Client"
+		SET
+		"surname" = '${surname}',
+			"name" ='${name}',
 			"secondName" = '${secondName}',
 			"phoneNumber" = '${phoneNumber}',
-			"email" = '${email}',
-			"password" = '${password}',
-		where "id" = ${id} `
+			"email" = '${email}'
+		WHERE "id" = '${id}'`
+		;
+
+	}
+
+	static getClientById(id) {
+		return `SELECT * FROM "Client" WHERE id = '${id}'`; // Запрос для получения клиента по ID
 	}
 }
 

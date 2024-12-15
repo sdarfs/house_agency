@@ -13,6 +13,21 @@ class WorkerQueries {
 		return `insert into "Worker" ("surname", "name", "secondName", "DepartmentId", "password", "email")
 						values ('${surname}', '${name}', '${secondName}', ${departmentId}, '${password}', '${email}')`
 	}
+	static updateWorkerById(surname, name, secondName, email, id) {
+		return `UPDATE "Worker"
+		SET
+		"surname" = '${surname}',
+			"name" ='${name}',
+			"secondName" = '${secondName}',
+			"email" = '${email}'
+		WHERE "id" = '${id}'`
+			;
+
+	}
+
+	static getWorkerById(id) {
+		return `SELECT * FROM "Worker" WHERE id = '${id}'`; // Запрос для получения клиента по ID
+	}
 }
 
 module.exports = WorkerQueries
