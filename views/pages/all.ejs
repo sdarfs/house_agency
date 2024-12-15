@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список домов</title>
-</head>
-<body>
-<h1>Список домов</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Адрес</th>
-        <th>ID</th>
-        <th>Стоимость</th>
-        <th>Описание</th>
-        <th>Количество комнат</th>
-        <th>Площадь</th>
-        <th>Район</th>
-        <th>Город</th>
-        <th>Назначение</th>
-        <th>Тип дома</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% house.forEach(house => { %>
-        <tr>
-            <td><%= house.address %></td>
-            <td><%= house.id %></td>
-            <td><%= house.cost %></td>
-            <td><%= house.description %></td>
-            <td><%= house.roomCount %></td>
-            <td><%= house.area %></td>
-            <td><%= house.districtName %></td>
-            <td><%= house.cityName %></td>
-            <td><%= house.housePurposeName %></td>
-            <td><%= house.houseTypeName %></td>
-        </tr>
-    <% }) %>
-    </tbody>
-</table>
-</body>
-</html>
+<%- include('../layout/base/top', {title: title, isWorker: isWorker}); %>
+
+<h1 class="font-semibold text-3xl mb-2"><%= title %></h1>
+<%- include('../myHouseTable/table', {houses: houses}); -%>
+
+<%- include('../layout/base/bottom'); -%>

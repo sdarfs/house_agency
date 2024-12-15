@@ -1,5 +1,4 @@
 <tr>
-    <td class="py-4 px-11"><%= house.id %></td>
     <td class="py-4 px-11">
         <% if (house.houseTypeName) { %>
             <%= house.houseTypeName %>
@@ -8,7 +7,11 @@
     <td class="py-4 px-11">
         <span><%= house.address %>, <%= house.districtName %>, <%= house.cityName %></span>
     </td>
+    <td
+        class="py-4 px-11">
+        <span><%=house.cost%></span>
+    </td>
     <td class="py-4 px-11 w-fit text-right">
-        <a class="text-blue-500 underline" href="/house/<%= house.id %>">Открыть</a>
+        <a class="text-blue-500 underline" href="/houses/<%= house.id %>">Открыть</a>
     </td>
 </tr>

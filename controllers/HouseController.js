@@ -37,6 +37,20 @@ class HouseController {
 			res.redirect(`/`)
 		})
 	}
+
+	static async getAllHouses(req, res) {
+		try {
+			const houses = await HouseModel.getAll();
+			res.render('pages/all', {
+				title: "Все дома",
+				houses: houses.rows,
+				isWorker: req.session.isWorker,
+			});
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
+	}
 }
 
 module.exports = HouseController
