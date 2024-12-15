@@ -9,9 +9,9 @@ class PassportModel {
 
     }
     static async postPassport(data) {
-        return await db.query(HouseQueries.postNew(data.series, data.number, data.issuedBy, data.issuedDate, data.birthday, data., data.purpose, data.district))
+        return await db.query(PassportQueries.postNew(data.series, data.number, data.issuedBy, data.issuedDate, data.birthday))
     }
 
 }
 
-module.exports = CityModel
+module.exports = PassportModel

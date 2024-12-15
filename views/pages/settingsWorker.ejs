@@ -8,6 +8,10 @@
     <%- include('../components/input/base', {id: 'email', placeholder: 'Email'}); -%>
     <%- include('../components/input/base', {id: 'password', placeholder: 'Пароль'}); -%>
     <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}); -%>
+    <!-- Кнопка "Назад" -->
+    <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">
+        Назад
+    </button>
 </form>
 
 <%- include('../layout/empty/bottom'); -%>

@@ -9,7 +9,6 @@
                 <% if (!isWorker) { %>
                 <a href="/requests/new" class="font-medium leading-6 text-black">Создать запрос</a>
                  <a href = "/registration/settings"  class="font-medium leading-6">Настройка пользователя</a>
-                    <a href = "houses/object"  class="font-medium leading-6">Собственные объекты</a>
                 <% } %>
                 <a href="/houses" class="font-medium leading-6 text-black">Все объекты</a>
                 <% if (isWorker) { %>
@@ -19,5 +18,8 @@
                 <% } %>
             </nav>
         </div>
+        <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">
+            Назад
+        </button>
     </div>
 </header>
