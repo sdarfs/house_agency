@@ -65,16 +65,16 @@ class RegistrationController {
 			}
 
 			const user = currentUser.rows[0];
-
-			// Обновляем только те поля, которые были переданы в форме
 			const updatedData = {
 				surname: req.body.surname || user.surname,
 				name: req.body.name || user.name,
 				secondName: req.body.secondName || user.secondName,
 				phoneNumber: req.body.phoneNumber || user.phoneNumber,
 				email: req.body.email || user.email,
+				password: await bcrypt.hash(req.body.password, 8) || user.password
 
 			};
+
 
 			ClientModel.updateClientById(userId, updatedData).then(() => {
 				res.redirect('/');
@@ -119,6 +119,7 @@ class RegistrationController {
 				name: req.body.name || user.name,
 				secondName: req.body.secondName || user.secondName,
 				email: req.body.email || user.email,
+				password: await bcrypt.hash(req.body.password, 8) || user.password
 
 			};
 

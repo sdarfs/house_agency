@@ -16,7 +16,7 @@ class ClientModel {
 	}
 
 	static async updateClientById(id, data) {
-		return await db.query(ClientQueries.updateClientById(data.surname, data.name, data.secondName, data.phoneNumber, data.email, id))
+		return await db.query(ClientQueries.updateClientById(data.surname, data.name, data.secondName, data.phoneNumber, data.email,data.password, id))
 	}
 
 

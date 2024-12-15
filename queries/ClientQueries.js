@@ -9,14 +9,15 @@ class ClientQueries {
 				values ('${surname}', '${name}', '${secondName}', '${phoneNumber}', '${email}', '${password}')`
 	}
 
-	static updateClientById(surname, name, secondName, phoneNumber, email,  id) {
+	static updateClientById(surname, name, secondName, phoneNumber, email, password, id) {
 		return `UPDATE "Client"
 		SET
 		"surname" = '${surname}',
 			"name" ='${name}',
 			"secondName" = '${secondName}',
 			"phoneNumber" = '${phoneNumber}',
-			"email" = '${email}'
+			"email" = '${email}',
+			"password" = '${password}'
 		WHERE "id" = '${id}'`
 		;
 
