@@ -1,0 +1,18 @@
+<%- include('../layout/empty/top', { title: title }); -%>
+<form method="POST" action="/client/find" class="bg-white p-16 rounded flex flex-col gap-5 relative min-h-128">
+    <h2 class="text-center font-semibold text-2xl w-72 block">Поиск пользователя</h2>
+
+    <%- include('../components/input/base', { id: 'surname', name: 'surname', placeholder: 'Фамилия' }); -%>
+    <%- include('../components/input/base', { id: 'name', name: 'name', placeholder: 'Имя' }); -%>
+    <%- include('../components/input/base', { id: 'email', name: 'email', placeholder: 'Электронная почта' }); -%>
+
+    <button type="submit" class="bg-green-950 text-white p-2 rounded mt-4">
+        Поиск
+    </button>
+</form>
+
+<button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">
+    Назад
+</button>
+
+<%- include('../layout/empty/bottom'); -%>

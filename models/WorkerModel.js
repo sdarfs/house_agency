@@ -1,12 +1,17 @@
 const db = require('../config/db')
 const WorkerQueries = require("../queries/WorkerQueries");
-const ClientQueries = require("../queries/ClientQueries");
 
 class WorkerModel {
 	static async getWorkersByDepartmentId(id) {
 		return await db.query(WorkerQueries.getWorkersByDepartmentId(id))
 	}
 
+	static getWorker(surname, name, email) {
+		return `select * from "Worker" 
+				where "surname" = '${surname}' and
+						"name" ='${name}' and
+						"email" = '${email}'`;
+	}
 	static async getOneByEmail(email) {
 		return await db.query(WorkerQueries.getWorkerByEmail(email))
 	}

@@ -7,7 +7,7 @@ class DocumentsModel {
 	}
 
 	static async create(body) {
-		return await db.query(DocumentQueries.create(body.docNumber, body.type, body.request))
+		return await db.query(DocumentQueries.create(body.docNumber, body.type,body.doc_text, body.request))
 	}
 
 	static async getOneById(id) {

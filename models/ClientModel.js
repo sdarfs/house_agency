@@ -5,6 +5,13 @@ class ClientModel {
 	static async getOneByEmail(email) {
 		return await db.query(ClientQueries.getClientByEmail(email))
 	}
+	static async getClient(data) {
+		return await db.query(ClientQueries.getClient(data.surname, data.name, data.email))
+	}
+	static async updatePassportData(data, body){
+		return await db.query(ClientQueries.updatePassport(data.id,body.series, body.number, body.issuedBy, body.issuedDate, body.birthday))
+	}
+
 
 	static async create(data) {
 		return await db.query(ClientQueries.create(data.surname, data.name, data.secondName, data.phoneNumber, data.email, data.password))

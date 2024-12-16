@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные клиента</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        body {
+            background-color: #f9fafb;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4a5568;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #2d3748;
+        }
+        input {
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #48bb78;
+            outline: none;
+        }
+        button {
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center font-semibold text-2xl">Данные клиента</h2>
+
+    <div class="mb-4">
+        <p>Фамилия: <%= client.surname %></p>
+        <p>Имя: <%= client.name %></p>
+        <p>Отчество: <%= client.secondName %></p>
+        <p>Email: <%= client.email %></p>
+    </div>
+
+    <h3>Заполните паспортные данные</h3>
+    <form method="POST" action="/client/update/<%= client.id %>">
+        <input type="text" name="series" placeholder="Серия паспорта" required>
+        <input type="text" name="number" placeholder="Номер паспорта" required>
+        <input type="text" name="issuedBy" placeholder="Кем выдан" required>
+        <input type="date" name="issuedDate" placeholder="Дата выдачи" required>
+        <input type="date" name="birthday" placeholder="Дата рождения" required>
+
+        <button type="submit" class="bg-green-950 text-white p-2 rounded mt-4 w-full">
+            Сохранить паспортные данные
+        </button>
+    </form>
+
+    <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4 w-full">
+        Назад
+    </button>
+</div>
+
+</body>
+</html>

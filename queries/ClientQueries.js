@@ -9,6 +9,25 @@ class ClientQueries {
 				values ('${surname}', '${name}', '${secondName}', '${phoneNumber}', '${email}', '${password}')`
 	}
 
+	static getClient(surname, name,email) {
+		return `select * from "Client" 
+				where "surname" = '${surname}' and
+					"name" = '${name}' and
+						"email" ='${email}'`;
+	}
+
+	static updatePassport(clientId,series, number, issuedBy, issuedDate, birthday) {
+		return `CALL public."upsert_passport"(
+						\t'${clientId}', 
+						\t'${series}', 
+						\t${number}, 
+						\t${issuedBy}, 
+						\t${issuedDate}, 
+						\t${birthday} 
+						)`
+			;
+	}
+
 	static updateClientById(surname, name, secondName, phoneNumber, email, password, id) {
 		return `UPDATE "Client"
 		SET
