@@ -50,12 +50,38 @@
 <div class="container">
     <h2 class="text-center font-semibold text-2xl">Данные клиента</h2>
 
-    <div class="mb-4">
-        <p>Фамилия: <%= client.surname %></p>
-        <p>Имя: <%= client.name %></p>
-        <p>Отчество: <%= client.secondName %></p>
-        <p>Email: <%= client.email %></p>
+    <div class="mb-4 grid">
+        <div>
+            <p>Фамилия: <%= client.surname %></p>
+            <p>Email: <%= client.email %></p>
+            <p>Имя: <%= client.name %></p>
+            <p>Отчество: <%= client.secondName %></p>
+        </div>
+        <div>
+            <p>Серия: <%= client.series %></p>
+            <p>Номер: <%= client.number %></p>
+            <p>Кем выдан: <%= client.issuedBy %></p>
+            <p>Когда выдан: <%= client.issuedDate %></p>
+            <p>Дата рождения: <%= client.birthday %></p>
+        </div>
+        <div>
+            <div>
+                <h1>Детали клиента</h1>
+                <h2>Номера запросов:</h2>
+                <ul>
+                    <% result.forEach(req => { %>
+                        <li>
+                            <a class="text-blue-500 underline" href="/requests/<%= req.id %>" target="_blank">
+                                <%= req.number %>
+                            </a>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+
     </div>
+
 
     <h3>Заполните паспортные данные</h3>
     <form method="POST" action="/client/update/<%= client.id %>">

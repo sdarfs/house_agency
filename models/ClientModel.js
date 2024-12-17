@@ -8,6 +8,10 @@ class ClientModel {
 	static async getClient(data) {
 		return await db.query(ClientQueries.getClient(data.surname, data.name, data.email))
 	}
+	static async getReq(data) {
+		const result = await db.query(ClientQueries.getReq(data))
+		return result.rows;
+	}
 	static async updatePassportData(data, body){
 		return await db.query(ClientQueries.updatePassport(data.id,body.series, body.number, body.issuedBy, body.issuedDate, body.birthday))
 	}

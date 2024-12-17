@@ -10,15 +10,28 @@ class ClientQueries {
 	}
 
 	static getClient(surname, name,email) {
-		return `select * from "Client" 
-				where "surname" = '${surname}' and
-					"name" = '${name}' and
-						"email" ='${email}'`;
+		return `SELECT
+					c.*,
+					p.*
+				FROM
+					"Client" c
+						LEFT JOIN
+					"Passport" p ON c."id" = p."ClientId"
+				WHERE
+					(("surname" = '${surname}' and
+						"name" = '${name}' and
+						"email" ='${email}') AND (p."isArchive" = 'false'))`;
+	}
+	static getReq(clientId) {
+		return `select "id", "number" from "Request"
+		where "ClientId" = '${clientId}'`;
+
 	}
 
-	static updatePassport(clientId,series, number, issuedBy, issuedDate, birthday) {
-		return `Insert into "Passport"("series","number","issuedBy", "issuedDate", "birthday", "ClientId" ) values ('${series}', '${number}', '${issuedBy}', '${issuedDate}', '${birthday}', '${clientId}')
-			`
+	static updatePassport(clientId, series, number, issuedBy, issuedDate, birthday) {
+		return `Insert into "Passport"("series", "number", "issuedBy", "issuedDate", "birthday", "ClientId")
+				values ('${series}', '${number}', '${issuedBy}', '${issuedDate}', '${birthday}', '${clientId}')
+		`
 			;
 	}
 
