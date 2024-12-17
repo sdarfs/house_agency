@@ -24,7 +24,7 @@ class WorkerModel {
 	}
 
 	static async updateWorkerById(id, data) {
-		return await db.query(WorkerQueries.updateWorkerById(data.surname, data.name, data.secondName,  data.email, data.password, id))
+		return await db.query(WorkerQueries.updateWorkerById(data.surname, data.name, data.secondName,  data.email, data.password,data.department, data.position,id))
 	}
 }
 

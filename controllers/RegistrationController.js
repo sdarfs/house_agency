@@ -2,6 +2,7 @@ const ClientModel = require("../models/ClientModel");
 const bcrypt = require('bcryptjs');
 const DepartmentModel = require("../models/DepartmentModel");
 const WorkerModel = require("../models/WorkerModel");
+const PositionModel = require("../models/PositionModel");
 
 class RegistrationController {
 	static async getRegistrationPage(req, res) {
@@ -91,7 +92,9 @@ class RegistrationController {
 		try {
 			const user = await WorkerModel.getOneById(userId); // Получаем данные пользователя по ID
 			if (user.rows.length > 0) {
-				res.render('pages/settingsWorker', { title: 'Настройки пользователя'});
+				const departments = await DepartmentModel.getAll()
+				const positions = await PositionModel.getAllPositions()
+				res.render('pages/settingsWorker', { title: 'Настройки пользователя', departments: departments.rows, positions:positions.rows});
 			} else {
 				res.status(404).send('Пользователь не найден');
 			}
@@ -102,38 +105,38 @@ class RegistrationController {
 	}
 
 	static async updateWorkerSettings(req, res) {
-		const userId = req.session.client.id; // Получаем ID пользователя из сессии
+			const userId = req.session.client.id; // Получаем ID пользователя из сессии
 
-		try {
-			// Получаем текущие данные пользователя
-			const currentUser = await WorkerModel.getOneById(userId);
-			if (currentUser.rows.length === 0) {
-				return res.status(404).send('Пользователь не найден');
+			try {
+				// Получаем текущие данные пользователя
+				const currentUser = await WorkerModel.getOneById(userId);
+				if (currentUser.rows.length === 0) {
+					return res.status(404).send('Пользователь не найден');
+				}
+
+				const user = currentUser.rows[0];
+
+				// Обновляем только те поля, которые были переданы в форме
+				const updatedData = {
+					surname: req.body.surname || user.surname,
+					name: req.body.name || user.name,
+					secondName: req.body.secondName || user.secondName,
+					email: req.body.email || user.email,
+					password: await bcrypt.hash(req.body.password, 8) || user.password,
+					department: req.body.department.id || user.DepartmentId,
+					position: req.body.position || user.PositionId,
+
+				};
+
+				WorkerModel.updateWorkerById(userId, updatedData).then(() => {
+					res.redirect('/');
+				})// Перенаправляем на страницу настроек после успешного обновления
+			} catch (error) {
+				console.error(error);
+				res.status(500).send('Ошибка сервера');
 			}
 
-			const user = currentUser.rows[0];
-
-			// Обновляем только те поля, которые были переданы в форме
-			const updatedData = {
-				surname: req.body.surname || user.surname,
-				name: req.body.name || user.name,
-				secondName: req.body.secondName || user.secondName,
-				email: req.body.email || user.email,
-				password: await bcrypt.hash(req.body.password, 8) || user.password
-
-			};
-
-			WorkerModel.updateWorkerById(userId, updatedData).then(() => {
-				res.redirect('/');
-			})// Перенаправляем на страницу настроек после успешного обновления
-		} catch (error) {
-			console.error(error);
-			res.status(500).send('Ошибка сервера');
-		}
 	}
-
-
-
 
 }
 

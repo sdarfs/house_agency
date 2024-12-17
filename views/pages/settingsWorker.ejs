@@ -7,6 +7,22 @@
     <%- include('../components/input/base', {id: 'secondName', placeholder: 'Отчество'}); -%>
     <%- include('../components/input/base', {id: 'email', placeholder: 'Email'}); -%>
     <%- include('../components/input/base', {id: 'password', placeholder: 'Пароль'}); -%>
+    <div class="w-64">
+    <label for="department" class="block mb-2 text-sm font-medium text-gray-900">Отдел:</label>
+    <select required id="department" name="department" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+        <option disabled>Выберете отдел</option>
+        <% departments.map((dep) => { %>
+            <option value="<%= dep.id %>"><%= dep.name %></option>
+        <% }) %>
+    </select>
+        <label for="position" class="block mb-2 text-sm font-medium text-gray-900">Должность:</label>
+        <select required id="position" name="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
+            <option disabled>Выберете должность</option>
+            <% positions.map((pos) => { %>
+                <option value="<%= pos.id %>"><%= pos.name %></option>
+            <% }) %>
+        </select>
+    </div>
     <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}); -%>
     <!-- Кнопка "Назад" -->
     <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">

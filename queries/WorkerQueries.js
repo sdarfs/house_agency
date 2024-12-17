@@ -13,14 +13,16 @@ class WorkerQueries {
 		return `insert into "Worker" ("surname", "name", "secondName", "DepartmentId", "password", "email")
 						values ('${surname}', '${name}', '${secondName}', ${departmentId}, '${password}', '${email}')`
 	}
-	static updateWorkerById(surname, name, secondName, email,password, id) {
+	static updateWorkerById(surname, name, secondName, email,password,departmentid, positionid, id) {
 		return `UPDATE "Worker"
 		SET
 		"surname" = '${surname}',
 			"name" ='${name}',
 			"secondName" = '${secondName}',
 			"email" = '${email}',
-			"password" = '${password}'
+			"password" = '${password}',
+			"DepartmentId" = '${departmentid}',
+			"PositionId" = '${positionid}'
 		WHERE "id" = '${id}'`
 			;
 
