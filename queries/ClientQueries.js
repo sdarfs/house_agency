@@ -17,14 +17,8 @@ class ClientQueries {
 	}
 
 	static updatePassport(clientId,series, number, issuedBy, issuedDate, birthday) {
-		return `CALL public."upsert_passport"(
-						\t'${clientId}', 
-						\t'${series}', 
-						\t${number}, 
-						\t${issuedBy}, 
-						\t${issuedDate}, 
-						\t${birthday} 
-						)`
+		return `Insert into "Passport"("series","number","issuedBy", "issuedDate", "birthday", "ClientId" ) values ('${series}', '${number}', '${issuedBy}', '${issuedDate}', '${birthday}', '${clientId}')
+			`
 			;
 	}
 
