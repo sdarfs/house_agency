@@ -34,16 +34,16 @@
 
     <% if (isWorker) { %>
     <div class="flex gap-4 mb-4">
-        <% if (request.status === 'Открыт') { %>
+        <% if (request.status === 'Открыт' || request.status === 'В обработке' ) { %>
+            <% if (request.type === 'Добавление объекта') { %>
+                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/houses/new">Добавить объект</a>
+            <% } %>
             <a class="text-blue-500 underline" href="/requests/<%= request.id %>/finish">Закончить</a>
             <a class="text-blue-500 underline" href="/requests/<%= request.id %>/close">Закрыть</a>
             <a class="text-blue-500 underline" href="/requests/<%= request.id %>/choose-worker">Назначить</a>
         <% } %>
-            <% if (request.status === 'В обработке') { %>
-                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/finish">Закончить</a>
-                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/close">Закрыть</a>
-                <a class="text-blue-500 underline" href="/requests/<%= request.id %>/choose-worker">Назначить</a>
-            <% } %>
+
+
             <a class="text-red-500 underline" href="/requests/<%= request.id %>/delete">Удалить</a>
     </div>
     <% } %>

@@ -5,6 +5,9 @@ class RequestModel {
 	static async getAllRequests() {
 		return await db.query(RequestQueries.getAll())
 	}
+	static async UpdateHoustIdinReq(house_id, req_id){
+		return await db.query(RequestQueries.UpdateIdHR(house_id, req_id))
+	}
 
 	static async getRequestByWorkerId(id) {
 		return await db.query(RequestQueries.getAllByWorkerId(id))

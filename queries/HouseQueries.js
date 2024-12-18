@@ -20,7 +20,7 @@ class HouseQueries {
 
 	static postNew(address, cost, desc, roomCount, area, houseTypeId, housePurposeId, districtId) {
 		return 'insert into "House" ("address", "cost", "description", "roomCount", "area", "HouseTypeId", "HousePurposeId", "DistrictId")\n' +
-			`values ('${address}', ${cost}, '${desc}', ${roomCount}, ${area}, ${houseTypeId}, ${housePurposeId}, ${districtId}) RETURNING "id"`
+			`values ('${address}', ${cost}, '${desc}', ${roomCount}, ${area}, ${houseTypeId}, ${housePurposeId}, ${districtId}) returning "id" `
 	}
 }
 

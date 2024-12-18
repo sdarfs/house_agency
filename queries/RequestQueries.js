@@ -27,6 +27,7 @@ class RequestQueries {
 			'"Request"."createStamp",\n' +
 			'"Request"."statusUpdateStamp",\n' +
 			'"Request"."closeStamp",\n' +
+
 			'"Department"."id" as "departmentId",\n' +
 			'"Department"."name" as "departmentName",\n' +
 			'"Worker"."surname" as "workerSurname",\n' +
@@ -37,7 +38,9 @@ class RequestQueries {
 			'"District"."Name" as "districtName",\n' +
 			'"City"."name" as "cityName",\n' +
 			'"RequestState"."name" as "status",\n' +
+			'"RequestType"."name" as "type",\n' +
 			'"House".id as "houseId"\n' +
+
 			'from "Request"\n' +
 			'left join "Client" ON "Client".id = "Request"."ClientId"\n' +
 			'left join "Department" ON "Department".id = "Request"."DepartmentId"\n' +
@@ -46,6 +49,7 @@ class RequestQueries {
 			'left join "District" ON "District".id = "House"."DistrictId"\n' +
 			'left join "City" ON "City".id = "District"."CityId"\n' +
 			'left join "RequestState" ON "RequestState".id = "Request"."RequestStateId"\n' +
+			'left join "RequestType" ON "RequestType".id = "Request"."RequestTypeId"\n' +
 			`where "Request".id = ${id}`
 	}
 
@@ -80,8 +84,7 @@ class RequestQueries {
 	}
 
 	static deleteById(id) {
-		return 'delete from "Request"\n' +
-			`where "id" = ${id}`
+		return `delete from "Request" where "id" = '${id}';`
 	}
 
 	static updateFinishById(id) {
@@ -112,6 +115,12 @@ class RequestQueries {
 						\t${requestTypeId}, 
 						\t${departmentId}
 						)`
+	}
+
+	static UpdateIdHR(house_id, req_id){
+		return `update "Request" set "HouseId" = '${house_id}'
+			where "id" = '${req_id}'
+		;`
 	}
 }
 

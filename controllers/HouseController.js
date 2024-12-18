@@ -4,6 +4,7 @@ const DistrictModel = require("../models/DistrictModel");
 const HouseTypeModel = require("../models/HouseTypeModel");
 const HousePurposeModel = require("../models/HousePurposeModel");
 const ImageModel = require("../models/ImageModel");
+const {UpdateHoustIdinReq} = require("../models/RequestModel");
 
 class HouseController {
 	static async getOneHouse(req, res) {
@@ -25,6 +26,7 @@ class HouseController {
 							houseTypes: houseTypes.rows,
 							housePurposes: housePurposes.rows,
 							isWorker: req.session.isWorker,
+							request: req.params.id
 						})
 					})
 				})
@@ -33,9 +35,19 @@ class HouseController {
 	}
 
 	static async postCreateHouse(req, res) {
-		HouseModel.postHouse(req.body).then(() => {
-			res.redirect(`/`)
-		})
+		try {
+			// Получаем ID нового дома
+			const newHouseId = await HouseModel.postHouse(req.body);
+
+			// Обновляем запрос с новым ID
+			await UpdateHoustIdinReq(newHouseId.rows[0].id, req.params.id);
+
+			// Перенаправляем пользователя
+			res.redirect('/');
+		} catch (error) {
+			console.error('Error creating house:', error);
+			res.status(500).send('Internal Server Error');
+		}
 	}
 
 	static async getAllHouses(req, res) {

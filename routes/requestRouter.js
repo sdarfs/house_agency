@@ -5,6 +5,7 @@ const isAuth = require("../middlewares/isAuth");
 const isClient = require("../middlewares/isClient");
 const isWorker = require("../middlewares/isWorker");
 const DocumentController = require("../controllers/DocumentController");
+const HouseController = require("../controllers/HouseController");
 
 requestRouter.get('/', isAuth, RequestController.getAllRequests)
 
@@ -13,6 +14,10 @@ requestRouter.get('/new', isAuth, isClient, RequestController.getCreateRequest)
 requestRouter.post('/new', isAuth, isClient, RequestController.postCreateRequest)
 
 requestRouter.get('/:id', isAuth, RequestController.getOneRequest)
+
+requestRouter.get('/:id/houses/new', isAuth, HouseController.createHouse)
+
+requestRouter.post('/:id/houses/new', isAuth,  HouseController.postCreateHouse)
 
 requestRouter.get('/:id/delete', isAuth, isWorker, RequestController.deleteRequest)
 

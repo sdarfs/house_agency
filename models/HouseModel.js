@@ -12,6 +12,7 @@ class HouseModel {
 
 	static async postHouse(data) {
 		return await db.query(HouseQueries.postNew(data.address, data.cost, data.details, data.roomCount, data.area, data.type, data.purpose, data.district))
+
 	}
 }
 
