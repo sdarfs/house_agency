@@ -31,8 +31,18 @@
                 <span><%= house.area %></span>
             </span>
             <p class="mt-4"><%= house.description %></p>
+            <% if (isWorker) { %>
+                <div class="flex gap-4 mb-4">
+
+                    <a class="text-blue-500 underline" href="/houses/<%= house.id %>/">Сменить статус на "Неактивно"</a>
+
+                </div>
+            <% } %>
+
+
         </div>
     </div>
+
 </div>
 
 <%- include('../layout/base/bottom'); -%>
