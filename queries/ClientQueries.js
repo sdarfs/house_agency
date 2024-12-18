@@ -35,15 +35,14 @@ class ClientQueries {
 			;
 	}
 
-	static updateClientById(surname, name, secondName, phoneNumber, email, password, id) {
+	static updateClientById(surname, name, secondName, phoneNumber, email, id) {
 		return `UPDATE "Client"
 		SET
 		"surname" = '${surname}',
 			"name" ='${name}',
 			"secondName" = '${secondName}',
 			"phoneNumber" = '${phoneNumber}',
-			"email" = '${email}',
-			"password" = '${password}'
+			"email" = '${email}'
 		WHERE "id" = '${id}'`
 		;
 
@@ -51,6 +50,15 @@ class ClientQueries {
 
 	static getClientById(id) {
 		return `SELECT * FROM "Client" WHERE id = '${id}'`; // Запрос для получения клиента по ID
+	}
+	static getClientByIdandPassport(id) {
+		return ` Select c.*,p.*
+				FROM
+					"Client" c
+					LEFT JOIN
+					"Passport" p ON c."id" = p."ClientId"
+					WHERE c."id" = '${id}' and p."isArchive" = 'false'
+					`;
 	}
 }
 

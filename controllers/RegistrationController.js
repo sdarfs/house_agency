@@ -72,14 +72,19 @@ class RegistrationController {
 				secondName: req.body.secondName || user.secondName,
 				phoneNumber: req.body.phoneNumber || user.phoneNumber,
 				email: req.body.email || user.email,
-				password: await bcrypt.hash(req.body.password, 8) || user.password
+
+				series: req.body.series || user.series,
+				number: req.body.number || user.number,
+				issuedBy: req.body.issuedBy || user.issuedBy,
+				issuedDate: req.body.issuedDate || user.issuedDate,
+				birthday: req.body.birthday || user.birthday
 
 			};
 
-
 			ClientModel.updateClientById(userId, updatedData).then(() => {
+				ClientModel.getOneByIdandPassport(userId, updatedData).then(() => {
 				res.redirect('/');
-			})// Перенаправляем на страницу настроек после успешного обновления
+			})})// Перенаправляем на страницу настроек после успешного обновления
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Ошибка сервера');
@@ -105,36 +110,42 @@ class RegistrationController {
 	}
 
 	static async updateWorkerSettings(req, res) {
-			const userId = req.session.client.id; // Получаем ID пользователя из сессии
+		const userId = req.session.client.id; // Получаем ID пользователя из сессии
 
-			try {
-				// Получаем текущие данные пользователя
-				const currentUser = await WorkerModel.getOneById(userId);
-				if (currentUser.rows.length === 0) {
-					return res.status(404).send('Пользователь не найден');
-				}
-
-				const user = currentUser.rows[0];
-
-				// Обновляем только те поля, которые были переданы в форме
-				const updatedData = {
-					surname: req.body.surname || user.surname,
-					name: req.body.name || user.name,
-					secondName: req.body.secondName || user.secondName,
-					email: req.body.email || user.email,
-					password: await bcrypt.hash(req.body.password, 8) || user.password,
-					department: req.body.department.id || user.DepartmentId,
-					position: req.body.position || user.PositionId,
-
-				};
-
-				WorkerModel.updateWorkerById(userId, updatedData).then(() => {
-					res.redirect('/');
-				})// Перенаправляем на страницу настроек после успешного обновления
-			} catch (error) {
-				console.error(error);
-				res.status(500).send('Ошибка сервера');
+		try {
+			// Получаем текущие данные пользователя
+			const currentUser = await WorkerModel.getOneById(userId);
+			if (currentUser.rows.length === 0) {
+				return res.status(404).send('Пользователь не найден');
 			}
+
+			const user = currentUser.rows[0];
+
+			// Обновляем только те поля, которые были переданы в форме
+			const updatedData = {
+				surname: req.body.surname || user.surname,
+				name: req.body.name || user.name,
+				secondName: req.body.secondName || user.secondName,
+				email: req.body.email || user.email,
+				department: req.body.department.id || user.DepartmentId,
+				position: req.body.position || user.PositionId,
+
+				series: req.body.series || user.series,
+				number: req.body.number || user.number,
+				issuedBy: req.body.issuedBy || user.issuedBy,
+				issuedDate: req.body.issuedDate || user.issuedDate,
+				birthday: req.body.birthday || user.birthday
+
+			};
+
+			WorkerModel.updateWorkerById(userId, updatedData).then(() => {
+				WorkerModel.getOneByIdandPassport(userId, updatedData).then(() => {
+					res.redirect('/');
+			})})// Перенаправляем на страницу настроек после успешного обновления
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Ошибка сервера');
+		}
 
 	}
 

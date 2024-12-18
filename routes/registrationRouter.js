@@ -3,7 +3,6 @@ const registrationRouter = express.Router();
 const RegistrationController = require("../controllers/RegistrationController");
 const isAuth = require("../middlewares/isAuth");
 const isWorker = require("../middlewares/isWorker");
-const DocumentController = require("../controllers/DocumentController");
 
 
 registrationRouter.get('/', RegistrationController.getRegistrationPage)

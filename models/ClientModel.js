@@ -26,8 +26,13 @@ class ClientModel {
 		return await db.query(ClientQueries.getClientById(id));
 	}
 
+	static async getOneByIdandPassport(id, data) {
+		return await db.query(ClientQueries.updatePassport(id, data.series, data.number, data.issuedBy, data.issuedDate, data.birthday));
+	}
+
 	static async updateClientById(id, data) {
-		return await db.query(ClientQueries.updateClientById(data.surname, data.name, data.secondName, data.phoneNumber, data.email,data.password, id))
+		return await db.query(ClientQueries.updateClientById(data.surname, data.name, data.secondName, data.phoneNumber, data.email, id))
+
 	}
 
 

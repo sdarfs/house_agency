@@ -23,6 +23,13 @@
             <% }) %>
         </select>
     </div>
+    <h2 class="text-center font-semibold text-2xl w-72 block">Паспортные данные</h2>
+    <%- include('../components/input/base', {id: 'series', placeholder: 'Серия'}); -%>
+    <%- include('../components/input/base', {id: 'number', placeholder: 'Номер'}); -%>
+    <%- include('../components/input/base', {id: 'issuedBy', placeholder: 'Кем выдан'}); -%>
+    <%- include('../components/input/base', {id: 'issuedDate', placeholder: 'Дата выдачи(YYYY-MM-DD)'}); -%>
+    <%- include('../components/input/base', {id: 'birthday', placeholder: 'Дата рождения(YYYY-MM-DD)'}); -%>
+
     <%- include('../components/button/primary', {text: 'Сохранить', type: 'submit'}); -%>
     <!-- Кнопка "Назад" -->
     <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">
