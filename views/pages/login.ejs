@@ -2,8 +2,8 @@
 
 <form method="post" action="/login" class="bg-white p-16 rounded flex flex-col gap-5 relative min-h-128">
     <h2 class="text-center font-semibold text-2xl w-72 block">Estate Agency</h2>
-    <%- include('../components/input/base', {id: 'email', placeholder: 'Email'}); -%>
-    <%- include('../components/input/base', {id: 'password', placeholder: 'Пароль'}); -%>
+    <%- include('../components/input/base', {id: 'email', placeholder: 'Email', type: 'text'}); -%>
+    <%- include('../components/input/base', {id: 'password', placeholder: 'Пароль', type: 'password'}); -%>
     <%- include('../components/button/primary', {text: 'Вход', type: 'submit'}); -%>
     <a href="/registration" class="font-medium text-center text-green-500">Регистрация</a>
 </form>
