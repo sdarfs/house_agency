@@ -6,49 +6,63 @@
         <th class="py-4 px-11 text-left">Стоимость</th>
         <th class="py-4 px-11 text-left">Назначение</th>
         <% if (isWorker) { %>
-            <div>
-                <label>
-                    <input type="checkbox" id="statusFilter" /> Показать только активные
-                </label>
-            </div>
-
-            <th class="py-4 px-11 text-left">Статус</th>
+            <th class="py-4 px-11 text-left">Статус
+                <input type="checkbox" id="activeFilter" onchange="filterActive()" />
+                <label for="activeFilter">Только активные</label>
+            </th>
         <% } %>
         <th class="py-4 px-11 text-left w-fit"></th>
     </tr>
     </thead>
+
     <tbody id="tableBody" class="bg-white divide-y">
-    <% houses.forEach(house => { %>
-        <tr data-status="<%= house.status ? 'true' : 'false' %>">
-            <%- include('row', { house: house }) -%>
+    <%
+        const filteredHouses = isWorker ? houses : houses.filter(house => house.status); // Фильтруем дома по статусу
+    filteredHouses.forEach(house => {
+    %>
+        <tr class="<%= house.status ? 'active' : 'inactive' %>">
+            <td class="py-4 px-11">
+                <% if (house.houseTypeName) { %>
+                    <%= house.houseTypeName %>
+                <% } %>
+            </td>
+            <td class="py-4 px-11">
+                <span><%= house.address %>, <%= house.districtName %>, <%= house.cityName %></span>
+            </td>
+            <td class="py-4 px-11">
+                <span><%= house.cost %></span>
+            </td>
+            <td class="py-4 px-11">
+                <span><%= house.housePurposeName %></span>
+            </td>
+            <% if (isWorker) { %>
+                <td><%= house.status ?  'Активный' : 'Неактивный' %></td>
+            <% } %>
+            <td class="py-4 px-11 w-fit text-right">
+                <a class="text-blue-500 underline" href="/houses/<%= house.id %>">Открыть</a>
+            </td>
         </tr>
     <% }) %>
     </tbody>
 </table>
 
 <script>
-    document.getElementById('statusFilter').addEventListener('change', function() {
-        const tableBody = document.getElementById('tableBody');
-        const rows = tableBody.getElementsByTagName('tr');
+    function filterActive() {
+        const checkbox = document.getElementById('activeFilter');
+        const rows = document.querySelectorAll('#tableBody tr');
 
-        console.log("Чекбокс установлен:", this.checked);
-
-        for (let row of rows) {
-            const status = row.getAttribute('data-status');
-            console.log("Статус строки:", status);
-
-            // Проверяем, является ли статус "активным"
-            if (this.checked) {
-                // Показываем только активные дома
-                if (status === 'false') {
-                    row.style.display = 'none'; // Скрыть неактивные дома
+        rows.forEach(row => {
+            if (checkbox.checked) {
+                // Показывать только активные
+                if (row.classList.contains('active')) {
+                    row.style.display = '';
                 } else {
-                    row.style.display = ''; // Показать активные дома
+                    row.style.display = 'none';
                 }
             } else {
-                // Если чекбокс не установлен, показываем все дома
+                // Показывать все
                 row.style.display = '';
             }
-        }
-    });
+        });
+    }
 </script>
