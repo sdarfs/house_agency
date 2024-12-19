@@ -1,8 +1,23 @@
 <table class="table-auto drop-shadow w-full rounded-xl overflow-hidden divide-y">
-    <%- include('head') -%>
+    <thead class="bg-slate-50">
+    <tr>
+        <th class="py-4 px-11 text-left">Тип</th>
+        <th class="py-4 px-11 text-left">Адрес</th>
+        <th class="py-4 px-11 text-left">Стоимость</th>
+        <th class="py-4 px-11 text-left">Назначение</th>
+        <% if (isWorker) { %>
+            <th class="py-4 px-11 text-left">Статус</th>
+        <% } %>
+        <th class="py-4 px-11 text-left w-fit"></th>
+    </tr>
+    </thead>
     <tbody class="bg-white divide-y">
-    <% houses.map(house => {  %>
-        <%- include('row', {house: house}) -%>
+    <% houses.forEach(house => { %>
+        <% if (isWorker || house.status) { %>
+            <tr data-status="<%= house.status %>">
+                <%- include('row', { house: house }) -%>
+            </tr>
+        <% } %>
     <% }) %>
     </tbody>
 </table>

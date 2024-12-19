@@ -11,6 +11,16 @@
         class="py-4 px-11">
         <span><%=house.cost%></span>
     </td>
+    <td class="py-4 px-11">
+        <span><%= house.housePurposeName %></span>
+    </td>
+
+    <% if (isWorker) { %>
+        <td class="py-4 px-11">
+            <span><%= house.status ? 'Активно' : 'Неактивно' %></span>
+        </td>
+    <% } %>
+
     <td class="py-4 px-11 w-fit text-right">
         <a class="text-blue-500 underline" href="/houses/<%= house.id %>">Открыть</a>
     </td>
