@@ -6,7 +6,7 @@
     </div>
     <%- include('../components/input/base', {placeholder: 'Номер документа', id: 'docNumber', required: true}) %>
     <div class="w-64 mt-4">
-        <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Тип запроса:</label>
+        <label for="type" class="block mb-2 text-sm font-medium text-gray-900">Тип документа:</label>
         <select required id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 invalid:border-red-500 invalid:text-red-600">
             <option disabled>Выберете тип документа</option>
             <% types.map((type) => { %>
