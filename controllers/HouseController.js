@@ -12,6 +12,11 @@ class HouseController {
 			res.render('pages/object', {title: "Дом", house: house.rows[0], isWorker: req.session.isWorker})
 		})
 	}
+	static async changeStatus(req, res){
+		HouseModel.changeStatus(req.params.id).then(()=>{
+			res.redirect('/houses');
+		})
+	}
 
 
 	static async createHouse(req, res) {

@@ -13,6 +13,9 @@ class HouseModel {
 	static async postHouse(data) {
 		return await db.query(HouseQueries.postNew(data.address, data.cost, data.details, data.roomCount, data.area, true, data.type, data.purpose, data.district))
 	}
+	static async changeStatus(data) {
+		return await db.query(HouseQueries.changeStatus(data))
+	}
 }
 
 module.exports = HouseModel

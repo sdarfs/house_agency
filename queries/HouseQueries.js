@@ -20,6 +20,10 @@ class HouseQueries {
 		return 'insert into "House" ("address", "cost", "description", "roomCount", "area", "status", "HouseTypeId", "HousePurposeId", "DistrictId")\n' +
 			`values ('${address}', ${cost}, '${desc}', ${roomCount}, ${area}, ${status}, ${houseTypeId}, ${housePurposeId}, ${districtId}) returning "id" `
 	}
+	static changeStatus(id){
+		return `update "House" set "status" = not "status"
+			where "House"."id" = '${id}';`
+	}
 }
 
 module.exports = HouseQueries

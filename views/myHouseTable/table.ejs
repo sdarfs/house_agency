@@ -1,4 +1,4 @@
-<table class="table-auto drop-shadow w-full rounded-xl overflow-hidden divide-y">
+<table>
     <thead class="bg-slate-50">
     <tr>
         <th class="py-4 px-11 text-left">Тип</th>
@@ -6,18 +6,49 @@
         <th class="py-4 px-11 text-left">Стоимость</th>
         <th class="py-4 px-11 text-left">Назначение</th>
         <% if (isWorker) { %>
+            <div>
+                <label>
+                    <input type="checkbox" id="statusFilter" /> Показать только активные
+                </label>
+            </div>
+
             <th class="py-4 px-11 text-left">Статус</th>
         <% } %>
         <th class="py-4 px-11 text-left w-fit"></th>
     </tr>
     </thead>
-    <tbody class="bg-white divide-y">
+    <tbody id="tableBody" class="bg-white divide-y">
     <% houses.forEach(house => { %>
-        <% if (isWorker || house.status) { %>
-            <tr data-status="<%= house.status %>">
-                <%- include('row', { house: house }) -%>
-            </tr>
-        <% } %>
+        <tr data-status="<%= house.status ? 'true' : 'false' %>">
+            <%- include('row', { house: house }) -%>
+        </tr>
     <% }) %>
     </tbody>
 </table>
+
+<script>
+    document.getElementById('statusFilter').addEventListener('change', function() {
+        const tableBody = document.getElementById('tableBody');
+        const rows = tableBody.getElementsByTagName('tr');
+
+        console.log("Чекбокс установлен:", this.checked);
+
+        for (let row of rows) {
+            const status = row.getAttribute('data-status');
+            console.log("Статус строки:", status);
+
+            // Проверяем, является ли статус "активным"
+            if (this.checked) {
+                // Показываем только активные дома
+                if (status === 'false') {
+                    row.style.display = 'none'; // Скрыть неактивные дома
+                } else {
+                    row.style.display = ''; // Показать активные дома
+                }
+            } else {
+                // Если чекбокс не установлен, показываем все дома
+                row.style.display = '';
+            }
+        }
+    });
+</script>

@@ -7,5 +7,6 @@ houseRouter.post('/new', isAuth, HouseController.postCreateHouse)
 houseRouter.get('/new', isAuth, HouseController.createHouse)
 houseRouter.get('/:id', isAuth, HouseController.getOneHouse)
 houseRouter.get('/', isAuth, HouseController.getAllHouses);
+houseRouter.get('/change/:id', isAuth, HouseController.changeStatus);
 
 module.exports = houseRouter;

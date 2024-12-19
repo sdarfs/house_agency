@@ -32,10 +32,12 @@
             </span>
             <p class="mt-4"><%= house.description %></p>
             <% if (isWorker) { %>
+                <span class="flex">
+                     <span class="text-gray-400 w-32 block">Статус:</span>
+                    <span><%= house.status ? 'Активный' : 'Неактивный' %></span>
+            </span>
                 <div class="flex gap-4 mb-4">
-
-                    <a class="text-blue-500 underline" href="/houses/<%= house.id %>/">Сменить статус на "Неактивно"</a>
-
+                    <a class="text-blue-500 underline" href="/houses/change/<%= house.id %>">Сменить статус</a>
                 </div>
             <% } %>
 
