@@ -127,7 +127,7 @@ class RegistrationController {
 				name: req.body.name || user.name,
 				secondName: req.body.secondName || user.secondName,
 				email: req.body.email || user.email,
-				department: req.body.department.id || user.DepartmentId,
+				department: req.body.department || user.DepartmentId,
 				position: req.body.position || user.PositionId,
 
 				series: req.body.series || user.series,
@@ -137,11 +137,15 @@ class RegistrationController {
 				birthday: req.body.birthday || user.birthday
 
 			};
+			await WorkerModel.updateWorkerById(userId, updatedData);
+			if (req.body.series.length > 0 && req.body.number.length > 0 &&
+				req.body.issuedBy.length > 0 && req.body.issuedDate.length >  req.body.birthday.length > 0 ){
+				await WorkerModel.getOneByIdandPassport(userId, updatedData);
+			}
+			else{
+				res.redirect('/');
+			}
 
-			WorkerModel.updateWorkerById(userId, updatedData).then(() => {
-				WorkerModel.getOneByIdandPassport(userId, updatedData).then(() => {
-					res.redirect('/');
-			})})// Перенаправляем на страницу настроек после успешного обновления
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Ошибка сервера');
