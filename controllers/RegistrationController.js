@@ -80,11 +80,14 @@ class RegistrationController {
 				birthday: req.body.birthday || user.birthday
 
 			};
-
-			ClientModel.updateClientById(userId, updatedData).then(() => {
-				ClientModel.getOneByIdandPassport(userId, updatedData).then(() => {
+			await ClientModel.updateClientById(userId, updatedData);
+			if (req.body.series.length > 0 && req.body.number.length > 0 &&
+				req.body.issuedBy.length > 0 && req.body.issuedDate.length >  req.body.birthday.length > 0 ){
+				await ClientModel.getOneByIdandPassport(userId, updatedData);
+			}
+			else{
 				res.redirect('/');
-			})})// Перенаправляем на страницу настроек после успешного обновления
+			} //Перенаправляем на страницу настроек после успешного обновления
 		} catch (error) {
 			console.error(error);
 			res.status(500).send('Ошибка сервера');
