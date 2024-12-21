@@ -12,6 +12,9 @@ class ClientModel {
 		const result = await db.query(ClientQueries.getReq(data))
 		return result.rows;
 	}
+	static async getPassport(data){
+		return await db.query(ClientQueries.getPassport(data))
+	}
 	static async updatePassportData(data, body){
 		return await db.query(ClientQueries.updatePassport(data.id,body.series, body.number, body.issuedBy, body.issuedDate, body.birthday))
 	}
@@ -34,6 +37,11 @@ class ClientModel {
 		return await db.query(ClientQueries.updateClientById(data.surname, data.name, data.secondName, data.phoneNumber, data.email, id))
 
 	}
+	static async getAllClients() {
+		return await db.query(ClientQueries.getAllClients())
+
+	}
+
 
 
 

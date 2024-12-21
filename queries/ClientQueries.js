@@ -20,7 +20,7 @@ class ClientQueries {
 				WHERE
 					(("surname" = '${surname}' and
 						"name" = '${name}' and
-						"email" ='${email}') AND (p."isArchive" = 'false'))`;
+						"email" ='${email}'))`;
 	}
 	static getReq(clientId) {
 		return `select "id", "number" from "Request"
@@ -31,6 +31,13 @@ class ClientQueries {
 	static updatePassport(clientId, series, number, issuedBy, issuedDate, birthday) {
 		return `Insert into "Passport"("series", "number", "issuedBy", "issuedDate", "birthday", "ClientId")
 				values ('${series}', '${number}', '${issuedBy}', '${issuedDate}', '${birthday}', '${clientId}')
+		`
+			;
+	}
+
+	static getPassport(clientId) {
+		return `select * from  "Passport"
+				where "ClientId" = '${clientId}' and "isArchive" = false
 		`
 			;
 	}

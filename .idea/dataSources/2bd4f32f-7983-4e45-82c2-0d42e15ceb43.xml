@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>1836</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1988</IntrospectionStateNumber>
       <ServerVersion>14.14</ServerVersion>
       <StartupTime>1732758911</StartupTime>
       <TimeZones>true ACDT
@@ -801,7 +801,7 @@ false Zulu
 13722||10|C|G
 13722||-9223372036854775808|U|G
 13722||10|U|G</Grants>
-      <IntrospectionStateNumber>1836</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1988</IntrospectionStateNumber>
       <ObjectId>17980</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4238,8 +4238,8 @@ false Zulu
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1836</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-12-18.04:27:59</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1988</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-12-20.14:38:54</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>526</StateNumber>
       <OwnerName>daria</OwnerName>
@@ -4444,203 +4444,211 @@ false Zulu
       <StoredType>integer|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="287" parent="263" name="City">
+    <sequence id="287" parent="263" name="sequence_image">
+      <ObjectId>18283</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>1886</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="288" parent="263" name="City">
       <ObjectId>17988</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="288" parent="263" name="Client">
+    <table id="289" parent="263" name="Client">
       <ObjectId>17992</ObjectId>
       <Options>autovacuum_enabled=true</Options>
-      <StateNumber>1715</StateNumber>
+      <StateNumber>1987</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="289" parent="263" name="Department">
+    <table id="290" parent="263" name="Department">
       <ObjectId>17998</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="290" parent="263" name="District">
+    <table id="291" parent="263" name="District">
       <ObjectId>18002</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="291" parent="263" name="Document">
+    <table id="292" parent="263" name="Document">
       <ObjectId>18006</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1795</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="292" parent="263" name="DocumentType">
+    <table id="293" parent="263" name="DocumentType">
       <ObjectId>18013</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="293" parent="263" name="House">
+    <table id="294" parent="263" name="House">
       <ObjectId>18021</ObjectId>
       <Options>autovacuum_enabled=true</Options>
-      <StateNumber>1715</StateNumber>
+      <StateNumber>1928</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="294" parent="263" name="HousePurpose">
+    <table id="295" parent="263" name="HousePurpose">
       <ObjectId>18026</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="295" parent="263" name="HouseType">
+    <table id="296" parent="263" name="HouseType">
       <ObjectId>18030</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="296" parent="263" name="Image">
+    <table id="297" parent="263" name="Image">
       <ObjectId>18035</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="297" parent="263" name="Passport">
+    <table id="298" parent="263" name="Passport">
       <ObjectId>18038</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="298" parent="263" name="Position">
+    <table id="299" parent="263" name="Position">
       <ObjectId>18044</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="299" parent="263" name="Request">
+    <table id="300" parent="263" name="Request">
       <ObjectId>18048</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="300" parent="263" name="RequestState">
+    <table id="301" parent="263" name="RequestState">
       <ObjectId>18053</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="301" parent="263" name="RequestType">
+    <table id="302" parent="263" name="RequestType">
       <ObjectId>18057</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="302" parent="263" name="Worker">
+    <table id="303" parent="263" name="Worker">
       <ObjectId>18062</ObjectId>
       <Options>autovacuum_enabled=true</Options>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <argument id="303" parent="264" name="InFileName">
+    <argument id="304" parent="264" name="InFileName">
       <Position>1</Position>
       <StoredType>varchar|0s</StoredType>
     </argument>
-    <argument id="304" parent="265" name="InNumber">
+    <argument id="305" parent="265" name="InNumber">
       <Position>1</Position>
       <StoredType>varchar|0s</StoredType>
     </argument>
-    <argument id="305" parent="265" name="InDetails">
+    <argument id="306" parent="265" name="InDetails">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </argument>
-    <argument id="306" parent="265" name="InHouseId">
+    <argument id="307" parent="265" name="InHouseId">
       <Position>3</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="307" parent="265" name="InRequestStateId">
+    <argument id="308" parent="265" name="InRequestStateId">
       <Position>4</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="308" parent="265" name="InClientId">
+    <argument id="309" parent="265" name="InClientId">
       <Position>5</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="309" parent="265" name="InRequestTypeId">
+    <argument id="310" parent="265" name="InRequestTypeId">
       <Position>6</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="310" parent="265" name="InDepartmentId">
+    <argument id="311" parent="265" name="InDepartmentId">
       <Position>7</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="311" parent="266">
+    <argument id="312" parent="266">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="312" parent="266" name="InClientId">
+    <argument id="313" parent="266" name="InClientId">
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="313" parent="267">
+    <argument id="314" parent="267">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>bigint|0s</StoredType>
     </argument>
-    <argument id="314" parent="267" name="InClientId">
+    <argument id="315" parent="267" name="InClientId">
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="315" parent="268">
+    <argument id="316" parent="268">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>trigger|0s</StoredType>
     </argument>
-    <argument id="316" parent="269">
+    <argument id="317" parent="269">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>trigger|0s</StoredType>
     </argument>
-    <argument id="317" parent="270">
+    <argument id="318" parent="270">
       <ArgumentDirection>R</ArgumentDirection>
       <StoredType>trigger|0s</StoredType>
     </argument>
-    <argument id="318" parent="271" name="p_clientid">
+    <argument id="319" parent="271" name="p_clientid">
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </argument>
-    <argument id="319" parent="271" name="p_series">
+    <argument id="320" parent="271" name="p_series">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </argument>
-    <argument id="320" parent="271" name="p_number">
+    <argument id="321" parent="271" name="p_number">
       <Position>3</Position>
       <StoredType>text|0s</StoredType>
     </argument>
-    <argument id="321" parent="271" name="p_issuedby">
+    <argument id="322" parent="271" name="p_issuedby">
       <Position>4</Position>
       <StoredType>text|0s</StoredType>
     </argument>
-    <argument id="322" parent="271" name="p_issueddate">
+    <argument id="323" parent="271" name="p_issueddate">
       <Position>5</Position>
       <StoredType>date|0s</StoredType>
     </argument>
-    <argument id="323" parent="271" name="p_birthday">
+    <argument id="324" parent="271" name="p_birthday">
       <Position>6</Position>
       <StoredType>date|0s</StoredType>
     </argument>
-    <column id="324" parent="287" name="id">
+    <column id="325" parent="288" name="id">
       <DefaultExpression>nextval(&apos;&quot;City_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4649,21 +4657,21 @@ false Zulu
       <SequenceId>17991</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="325" parent="287" name="name">
+    <column id="326" parent="288" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="326" parent="287" name="CityId">
+    <index id="327" parent="288" name="CityId">
       <ColNames>id</ColNames>
       <ObjectId>18084</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="327" parent="287" name="PK_City">
+    <index id="328" parent="288" name="PK_City">
       <ColNames>id</ColNames>
       <ObjectId>18106</ObjectId>
       <Primary>1</Primary>
@@ -4671,18 +4679,18 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="328" parent="287" name="PK_City">
+    <key id="329" parent="288" name="PK_City">
       <ObjectId>18107</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18106</UnderlyingIndexId>
     </key>
-    <key id="329" parent="287" name="CityId">
+    <key id="330" parent="288" name="CityId">
       <ObjectId>18085</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18084</UnderlyingIndexId>
     </key>
-    <column id="330" parent="288" name="id">
+    <column id="331" parent="289" name="id">
       <DefaultExpression>nextval(&apos;&quot;Client_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4691,52 +4699,58 @@ false Zulu
       <SequenceId>17997</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="331" parent="288" name="surname">
+    <column id="332" parent="289" name="surname">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="332" parent="288" name="name">
+    <column id="333" parent="289" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="333" parent="288" name="secondName">
+    <column id="334" parent="289" name="secondName">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="334" parent="288" name="phoneNumber">
+    <column id="335" parent="289" name="phoneNumber">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(16)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="335" parent="288" name="email">
+    <column id="336" parent="289" name="email">
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(64)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="336" parent="288" name="password">
+    <column id="337" parent="289" name="password">
       <Position>7</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(64)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="337" parent="288" name="ClientId">
+    <column id="338" parent="289" name="registration">
+      <Position>8</Position>
+      <StateNumber>1987</StateNumber>
+      <StoredType>date|0s</StoredType>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="339" parent="289" name="ClientId">
       <ColNames>id</ColNames>
       <ObjectId>18086</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="338" parent="288" name="PK_Client">
+    <index id="340" parent="289" name="PK_Client">
       <ColNames>id</ColNames>
       <ObjectId>18108</ObjectId>
       <Primary>1</Primary>
@@ -4744,18 +4758,18 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="339" parent="288" name="PK_Client">
+    <key id="341" parent="289" name="PK_Client">
       <ObjectId>18109</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18108</UnderlyingIndexId>
     </key>
-    <key id="340" parent="288" name="ClientId">
+    <key id="342" parent="289" name="ClientId">
       <ObjectId>18087</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18086</UnderlyingIndexId>
     </key>
-    <column id="341" parent="289" name="id">
+    <column id="343" parent="290" name="id">
       <DefaultExpression>nextval(&apos;&quot;Department_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4764,21 +4778,21 @@ false Zulu
       <SequenceId>18001</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="342" parent="289" name="name">
+    <column id="344" parent="290" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="343" parent="289" name="DepartmentId">
+    <index id="345" parent="290" name="DepartmentId">
       <ColNames>id</ColNames>
       <ObjectId>18088</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="344" parent="289" name="PK_Department">
+    <index id="346" parent="290" name="PK_Department">
       <ColNames>id</ColNames>
       <ObjectId>18110</ObjectId>
       <Primary>1</Primary>
@@ -4786,18 +4800,18 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="345" parent="289" name="PK_Department">
+    <key id="347" parent="290" name="PK_Department">
       <ObjectId>18111</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18110</UnderlyingIndexId>
     </key>
-    <key id="346" parent="289" name="DepartmentId">
+    <key id="348" parent="290" name="DepartmentId">
       <ObjectId>18089</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18088</UnderlyingIndexId>
     </key>
-    <column id="347" parent="290" name="id">
+    <column id="349" parent="291" name="id">
       <DefaultExpression>nextval(&apos;&quot;District_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4806,34 +4820,34 @@ false Zulu
       <SequenceId>18005</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="348" parent="290" name="Name">
+    <column id="350" parent="291" name="Name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="349" parent="290" name="CityId">
+    <column id="351" parent="291" name="CityId">
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="350" parent="290" name="Relationship5">
+    <foreign-key id="352" parent="291" name="Relationship5">
       <ColNames>CityId</ColNames>
       <ObjectId>18258</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17988</RefTableId>
     </foreign-key>
-    <index id="351" parent="290" name="DistrictId">
+    <index id="353" parent="291" name="DistrictId">
       <ColNames>id</ColNames>
       <ObjectId>18090</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="352" parent="290" name="PK_District">
+    <index id="354" parent="291" name="PK_District">
       <ColNames>id</ColNames>
       <ObjectId>18112</ObjectId>
       <Primary>1</Primary>
@@ -4841,24 +4855,24 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="353" parent="290" name="IX_Relationship5">
+    <index id="355" parent="291" name="IX_Relationship5">
       <ColNames>CityId</ColNames>
       <ObjectId>18171</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="354" parent="290" name="PK_District">
+    <key id="356" parent="291" name="PK_District">
       <ObjectId>18113</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18112</UnderlyingIndexId>
     </key>
-    <key id="355" parent="290" name="DistrictId">
+    <key id="357" parent="291" name="DistrictId">
       <ObjectId>18091</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18090</UnderlyingIndexId>
     </key>
-    <column id="356" parent="291" name="id">
+    <column id="358" parent="292" name="id">
       <DefaultExpression>nextval(&apos;&quot;Document_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4867,66 +4881,66 @@ false Zulu
       <SequenceId>18020</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="357" parent="291" name="docNumber">
+    <column id="359" parent="292" name="docNumber">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="358" parent="291" name="createStamp">
+    <column id="360" parent="292" name="createStamp">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="359" parent="291" name="finishStamp">
+    <column id="361" parent="292" name="finishStamp">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="360" parent="291" name="RequestId">
+    <column id="362" parent="292" name="RequestId">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="361" parent="291" name="DocumentTypeId">
+    <column id="363" parent="292" name="DocumentTypeId">
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="362" parent="291" name="doc_text">
+    <column id="364" parent="292" name="doc_text">
       <Position>7</Position>
       <StateNumber>1795</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <foreign-key id="363" parent="291" name="Relationship15">
+    <foreign-key id="365" parent="292" name="Relationship15">
       <ColNames>RequestId</ColNames>
       <ObjectId>18208</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18048</RefTableId>
     </foreign-key>
-    <foreign-key id="364" parent="291" name="Relationship18">
+    <foreign-key id="366" parent="292" name="Relationship18">
       <ColNames>DocumentTypeId</ColNames>
       <ObjectId>18223</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18013</RefTableId>
     </foreign-key>
-    <index id="365" parent="291" name="DocumentId">
+    <index id="367" parent="292" name="DocumentId">
       <ColNames>id</ColNames>
       <ObjectId>18094</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="366" parent="291" name="PK_Document">
+    <index id="368" parent="292" name="PK_Document">
       <ColNames>id</ColNames>
       <ObjectId>18114</ObjectId>
       <Primary>1</Primary>
@@ -4934,30 +4948,30 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="367" parent="291" name="IX_Relationship15">
+    <index id="369" parent="292" name="IX_Relationship15">
       <ColNames>RequestId</ColNames>
       <ObjectId>18163</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="368" parent="291" name="IX_Relationship18">
+    <index id="370" parent="292" name="IX_Relationship18">
       <ColNames>DocumentTypeId</ColNames>
       <ObjectId>18166</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="369" parent="291" name="PK_Document">
+    <key id="371" parent="292" name="PK_Document">
       <ObjectId>18115</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18114</UnderlyingIndexId>
     </key>
-    <key id="370" parent="291" name="DocumentId">
+    <key id="372" parent="292" name="DocumentId">
       <ObjectId>18095</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18094</UnderlyingIndexId>
     </key>
-    <column id="371" parent="292" name="id">
+    <column id="373" parent="293" name="id">
       <DefaultExpression>nextval(&apos;&quot;DocumentType_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4966,28 +4980,28 @@ false Zulu
       <SequenceId>18016</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="372" parent="292" name="updateStamp">
+    <column id="374" parent="293" name="updateStamp">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="373" parent="292" name="fileName">
+    <column id="375" parent="293" name="fileName">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="374" parent="292" name="DocumentTypeId">
+    <index id="376" parent="293" name="DocumentTypeId">
       <ColNames>id</ColNames>
       <ObjectId>18096</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="375" parent="292" name="PK_DocumentType">
+    <index id="377" parent="293" name="PK_DocumentType">
       <ColNames>id</ColNames>
       <ObjectId>18118</ObjectId>
       <Primary>1</Primary>
@@ -4995,25 +5009,25 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="376" parent="292" name="PK_DocumentType">
+    <key id="378" parent="293" name="PK_DocumentType">
       <ObjectId>18119</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18118</UnderlyingIndexId>
     </key>
-    <key id="377" parent="292" name="DocumentTypeId">
+    <key id="379" parent="293" name="DocumentTypeId">
       <ObjectId>18097</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18096</UnderlyingIndexId>
     </key>
-    <trigger id="378" parent="292" name="DocTypeUpdate">
+    <trigger id="380" parent="293" name="DocTypeUpdate">
       <ColumnIndices>3</ColumnIndices>
       <Events>IU</Events>
       <ObjectId>18175</ObjectId>
       <StateNumber>1715</StateNumber>
       <CallRoutineId>17985</CallRoutineId>
     </trigger>
-    <column id="379" parent="293" name="id">
+    <column id="381" parent="294" name="id">
       <DefaultExpression>nextval(&apos;&quot;House_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5022,85 +5036,92 @@ false Zulu
       <SequenceId>18034</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="380" parent="293" name="address">
+    <column id="382" parent="294" name="address">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="381" parent="293" name="cost">
+    <column id="383" parent="294" name="cost">
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="382" parent="293" name="description">
+    <column id="384" parent="294" name="description">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="383" parent="293" name="roomCount">
+    <column id="385" parent="294" name="roomCount">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="384" parent="293" name="area">
+    <column id="386" parent="294" name="area">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="385" parent="293" name="HouseTypeId">
+    <column id="387" parent="294" name="HouseTypeId">
       <Position>7</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="386" parent="293" name="HousePurposeId">
+    <column id="388" parent="294" name="HousePurposeId">
       <Position>8</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="387" parent="293" name="DistrictId">
+    <column id="389" parent="294" name="DistrictId">
       <Position>9</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="388" parent="293" name="Relationship2">
+    <column id="390" parent="294" name="status">
+      <DefaultExpression>true</DefaultExpression>
+      <Position>10</Position>
+      <StateNumber>1931</StateNumber>
+      <StoredType>boolean|0s</StoredType>
+      <TypeId>16</TypeId>
+    </column>
+    <foreign-key id="391" parent="294" name="Relationship2">
       <ColNames>HouseTypeId</ColNames>
       <ObjectId>18233</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18030</RefTableId>
     </foreign-key>
-    <foreign-key id="389" parent="293" name="Relationship3">
+    <foreign-key id="392" parent="294" name="Relationship3">
       <ColNames>HousePurposeId</ColNames>
       <ObjectId>18248</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18026</RefTableId>
     </foreign-key>
-    <foreign-key id="390" parent="293" name="Relationship4">
+    <foreign-key id="393" parent="294" name="Relationship4">
       <ColNames>DistrictId</ColNames>
       <ObjectId>18253</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18002</RefTableId>
     </foreign-key>
-    <index id="391" parent="293" name="HouseId">
+    <index id="394" parent="294" name="HouseId">
       <ColNames>id</ColNames>
       <ObjectId>18098</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="392" parent="293" name="PK_House">
+    <index id="395" parent="294" name="PK_House">
       <ColNames>id</ColNames>
       <ObjectId>18122</ObjectId>
       <Primary>1</Primary>
@@ -5108,36 +5129,36 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="393" parent="293" name="IX_Relationship2">
+    <index id="396" parent="294" name="IX_Relationship2">
       <ColNames>HouseTypeId</ColNames>
       <ObjectId>18167</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="394" parent="293" name="IX_Relationship3">
+    <index id="397" parent="294" name="IX_Relationship3">
       <ColNames>HousePurposeId</ColNames>
       <ObjectId>18169</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="395" parent="293" name="IX_Relationship4">
+    <index id="398" parent="294" name="IX_Relationship4">
       <ColNames>DistrictId</ColNames>
       <ObjectId>18170</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="396" parent="293" name="PK_House">
+    <key id="399" parent="294" name="PK_House">
       <ObjectId>18123</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18122</UnderlyingIndexId>
     </key>
-    <key id="397" parent="293" name="HouseId">
+    <key id="400" parent="294" name="HouseId">
       <ObjectId>18099</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18098</UnderlyingIndexId>
     </key>
-    <column id="398" parent="294" name="id">
+    <column id="401" parent="295" name="id">
       <DefaultExpression>nextval(&apos;&quot;HousePurpose_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5146,21 +5167,21 @@ false Zulu
       <SequenceId>18029</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="399" parent="294" name="name">
+    <column id="402" parent="295" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="400" parent="294" name="HousePurposeId">
+    <index id="403" parent="295" name="HousePurposeId">
       <ColNames>id</ColNames>
       <ObjectId>18100</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="401" parent="294" name="PK_HousePurpose">
+    <index id="404" parent="295" name="PK_HousePurpose">
       <ColNames>id</ColNames>
       <ObjectId>18124</ObjectId>
       <Primary>1</Primary>
@@ -5168,18 +5189,18 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="402" parent="294" name="PK_HousePurpose">
+    <key id="405" parent="295" name="PK_HousePurpose">
       <ObjectId>18125</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18124</UnderlyingIndexId>
     </key>
-    <key id="403" parent="294" name="HousePurposeId">
+    <key id="406" parent="295" name="HousePurposeId">
       <ObjectId>18101</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18100</UnderlyingIndexId>
     </key>
-    <column id="404" parent="295" name="id">
+    <column id="407" parent="296" name="id">
       <DefaultExpression>nextval(&apos;&quot;HouseType_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5188,21 +5209,21 @@ false Zulu
       <SequenceId>18033</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="405" parent="295" name="name">
+    <column id="408" parent="296" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="406" parent="295" name="HouseTypeId">
+    <index id="409" parent="296" name="HouseTypeId">
       <ColNames>id</ColNames>
       <ObjectId>18102</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="407" parent="295" name="PK_HouseType">
+    <index id="410" parent="296" name="PK_HouseType">
       <ColNames>id</ColNames>
       <ObjectId>18126</ObjectId>
       <Primary>1</Primary>
@@ -5210,71 +5231,72 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="408" parent="295" name="PK_HouseType">
+    <key id="411" parent="296" name="PK_HouseType">
       <ObjectId>18127</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18126</UnderlyingIndexId>
     </key>
-    <key id="409" parent="295" name="HouseTypeId">
+    <key id="412" parent="296" name="HouseTypeId">
       <ObjectId>18103</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18102</UnderlyingIndexId>
     </key>
-    <column id="410" parent="296" name="id">
+    <column id="413" parent="297" name="id">
+      <DefaultExpression>nextval(&apos;sequence_image&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1715</StateNumber>
+      <StateNumber>1890</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="411" parent="296" name="name">
+    <column id="414" parent="297" name="image_path">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1715</StateNumber>
+      <StateNumber>1876</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="412" parent="296" name="size">
+    <column id="415" parent="297" name="size">
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="413" parent="296" name="extension">
+    <column id="416" parent="297" name="extension">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(8)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="414" parent="296" name="HouseId">
+    <column id="417" parent="297" name="HouseId">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="415" parent="296" name="Relationship7">
+    <foreign-key id="418" parent="297" name="Relationship7">
       <ColNames>id</ColNames>
       <ObjectId>18263</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18021</RefTableId>
     </foreign-key>
-    <foreign-key id="416" parent="296" name="HouseId">
+    <foreign-key id="419" parent="297" name="HouseId">
       <ColNames>HouseId</ColNames>
       <ObjectId>18178</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18021</RefTableId>
     </foreign-key>
-    <index id="417" parent="296" name="ImageName">
+    <index id="420" parent="297" name="ImageName">
       <ColNames>id</ColNames>
       <ObjectId>18104</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="418" parent="296" name="PK_Image">
+    <index id="421" parent="297" name="PK_Image">
       <ColNames>id</ColNames>
       <ObjectId>18128</ObjectId>
       <Primary>1</Primary>
@@ -5282,8 +5304,8 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="419" parent="296" name="Название">
-      <ColNames>name</ColNames>
+    <index id="422" parent="297" name="Название">
+      <ColNames>image_path</ColNames>
       <ObjectId>18154</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
@@ -5292,29 +5314,29 @@ false Zulu
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="420" parent="296" name="fki_HouseId">
+    <index id="423" parent="297" name="fki_HouseId">
       <ColNames>HouseId</ColNames>
       <ObjectId>18174</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="421" parent="296" name="PK_Image">
+    <key id="424" parent="297" name="PK_Image">
       <ObjectId>18129</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18128</UnderlyingIndexId>
     </key>
-    <key id="422" parent="296" name="ImageName">
+    <key id="425" parent="297" name="ImageName">
       <ObjectId>18105</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18104</UnderlyingIndexId>
     </key>
-    <key id="423" parent="296" name="Название">
+    <key id="426" parent="297" name="Название">
       <ObjectId>18155</ObjectId>
       <StateNumber>1715</StateNumber>
-      <UnderlyingIndexId>18154</UnderlyingIndexId>
+      <UnderlyingIndexColNames>image_path</UnderlyingIndexColNames>
     </key>
-    <column id="424" parent="297" name="id">
+    <column id="427" parent="298" name="id">
       <DefaultExpression>nextval(&apos;&quot;Passport_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5323,39 +5345,39 @@ false Zulu
       <SequenceId>18043</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="425" parent="297" name="series">
+    <column id="428" parent="298" name="series">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(4)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="426" parent="297" name="number">
+    <column id="429" parent="298" name="number">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(6)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="427" parent="297" name="issuedBy">
+    <column id="430" parent="298" name="issuedBy">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="428" parent="297" name="issuedDate">
+    <column id="431" parent="298" name="issuedDate">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>date|0s</StoredType>
       <TypeId>1082</TypeId>
     </column>
-    <column id="429" parent="297" name="birthday">
+    <column id="432" parent="298" name="birthday">
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>date|0s</StoredType>
       <TypeId>1082</TypeId>
     </column>
-    <column id="430" parent="297" name="isArchive">
+    <column id="433" parent="298" name="isArchive">
       <DefaultExpression>false</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -5363,33 +5385,33 @@ false Zulu
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
-    <column id="431" parent="297" name="ClientId">
+    <column id="434" parent="298" name="ClientId">
       <Position>8</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="432" parent="297" name="WorkerId">
+    <column id="435" parent="298" name="WorkerId">
       <Position>9</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="433" parent="297" name="Relationship16">
+    <foreign-key id="436" parent="298" name="Relationship16">
       <ColNames>ClientId</ColNames>
       <ObjectId>18213</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17992</RefTableId>
     </foreign-key>
-    <foreign-key id="434" parent="297" name="Relationship22">
+    <foreign-key id="437" parent="298" name="Relationship22">
       <ColNames>WorkerId</ColNames>
       <ObjectId>18243</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18062</RefTableId>
     </foreign-key>
-    <index id="435" parent="297" name="PK_Passport">
+    <index id="438" parent="298" name="PK_Passport">
       <ColNames>id</ColNames>
       <ObjectId>18130</ObjectId>
       <Primary>1</Primary>
@@ -5397,44 +5419,44 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="436" parent="297" name="PassportId">
+    <index id="439" parent="298" name="PassportId">
       <ColNames>id</ColNames>
       <ObjectId>18142</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="437" parent="297" name="IX_Relationship16">
+    <index id="440" parent="298" name="IX_Relationship16">
       <ColNames>ClientId</ColNames>
       <ObjectId>18164</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="438" parent="297" name="IX_Relationship22">
+    <index id="441" parent="298" name="IX_Relationship22">
       <ColNames>WorkerId</ColNames>
       <ObjectId>18168</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="439" parent="297" name="PK_Passport">
+    <key id="442" parent="298" name="PK_Passport">
       <ObjectId>18131</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18130</UnderlyingIndexId>
     </key>
-    <key id="440" parent="297" name="PassportId">
+    <key id="443" parent="298" name="PassportId">
       <ObjectId>18143</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18142</UnderlyingIndexId>
     </key>
-    <trigger id="441" parent="297" name="updatePassport">
+    <trigger id="444" parent="298" name="updatePassport">
       <Events>I</Events>
       <ObjectId>18177</ObjectId>
       <StateNumber>1715</StateNumber>
       <Turn>before-row</Turn>
       <CallRoutineId>17986</CallRoutineId>
     </trigger>
-    <column id="442" parent="298" name="id">
+    <column id="445" parent="299" name="id">
       <DefaultExpression>nextval(&apos;&quot;Position_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5443,14 +5465,14 @@ false Zulu
       <SequenceId>18047</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="443" parent="298" name="name">
+    <column id="446" parent="299" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="444" parent="298" name="PK_Position">
+    <index id="447" parent="299" name="PK_Position">
       <ColNames>id</ColNames>
       <ObjectId>18132</ObjectId>
       <Primary>1</Primary>
@@ -5458,25 +5480,25 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="445" parent="298" name="PositionId">
+    <index id="448" parent="299" name="PositionId">
       <ColNames>id</ColNames>
       <ObjectId>18144</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="446" parent="298" name="PK_Position">
+    <key id="449" parent="299" name="PK_Position">
       <ObjectId>18133</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18132</UnderlyingIndexId>
     </key>
-    <key id="447" parent="298" name="PositionId">
+    <key id="450" parent="299" name="PositionId">
       <ObjectId>18145</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18144</UnderlyingIndexId>
     </key>
-    <column id="448" parent="299" name="id">
+    <column id="451" parent="300" name="id">
       <DefaultExpression>nextval(&apos;&quot;Request_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5485,117 +5507,117 @@ false Zulu
       <SequenceId>18061</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="449" parent="299" name="number">
+    <column id="452" parent="300" name="number">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(32)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="450" parent="299" name="createStamp">
+    <column id="453" parent="300" name="createStamp">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="451" parent="299" name="closeStamp">
+    <column id="454" parent="300" name="closeStamp">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="452" parent="299" name="details">
+    <column id="455" parent="300" name="details">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="453" parent="299" name="statusUpdateStamp">
+    <column id="456" parent="300" name="statusUpdateStamp">
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="454" parent="299" name="HouseId">
+    <column id="457" parent="300" name="HouseId">
       <Position>7</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="455" parent="299" name="RequestStateId">
+    <column id="458" parent="300" name="RequestStateId">
       <Position>8</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="456" parent="299" name="ClientId">
+    <column id="459" parent="300" name="ClientId">
       <Position>9</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="457" parent="299" name="RequestTypeId">
+    <column id="460" parent="300" name="RequestTypeId">
       <Position>10</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="458" parent="299" name="DepartmentId">
+    <column id="461" parent="300" name="DepartmentId">
       <Position>11</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="459" parent="299" name="WorkerId">
+    <column id="462" parent="300" name="WorkerId">
       <Position>12</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="460" parent="299" name="Relationship8">
+    <foreign-key id="463" parent="300" name="Relationship8">
       <ColNames>HouseId</ColNames>
       <ObjectId>18268</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18021</RefTableId>
     </foreign-key>
-    <foreign-key id="461" parent="299" name="Relationship9">
+    <foreign-key id="464" parent="300" name="Relationship9">
       <ColNames>RequestStateId</ColNames>
       <ObjectId>18273</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18053</RefTableId>
     </foreign-key>
-    <foreign-key id="462" parent="299" name="Relationship10">
+    <foreign-key id="465" parent="300" name="Relationship10">
       <ColNames>ClientId</ColNames>
       <ObjectId>18183</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17992</RefTableId>
     </foreign-key>
-    <foreign-key id="463" parent="299" name="Relationship11">
+    <foreign-key id="466" parent="300" name="Relationship11">
       <ColNames>RequestTypeId</ColNames>
       <ObjectId>18188</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18057</RefTableId>
     </foreign-key>
-    <foreign-key id="464" parent="299" name="Relationship12">
+    <foreign-key id="467" parent="300" name="Relationship12">
       <ColNames>DepartmentId</ColNames>
       <ObjectId>18193</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17998</RefTableId>
     </foreign-key>
-    <foreign-key id="465" parent="299" name="Relationship14">
+    <foreign-key id="468" parent="300" name="Relationship14">
       <ColNames>WorkerId</ColNames>
       <ObjectId>18203</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18062</RefTableId>
     </foreign-key>
-    <index id="466" parent="299" name="PK_Request">
+    <index id="469" parent="300" name="PK_Request">
       <ColNames>id</ColNames>
       <ObjectId>18134</ObjectId>
       <Primary>1</Primary>
@@ -5603,14 +5625,14 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="467" parent="299" name="RequestId">
+    <index id="470" parent="300" name="RequestId">
       <ColNames>id</ColNames>
       <ObjectId>18146</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="468" parent="299" name="Номер запроса">
+    <index id="471" parent="300" name="Номер запроса">
       <ColNames>number</ColNames>
       <ObjectId>18156</ObjectId>
       <StateNumber>1715</StateNumber>
@@ -5620,66 +5642,66 @@ false Zulu
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="469" parent="299" name="IX_Relationship8">
+    <index id="472" parent="300" name="IX_Relationship8">
       <ColNames>HouseId</ColNames>
       <ObjectId>18172</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="470" parent="299" name="IX_Relationship9">
+    <index id="473" parent="300" name="IX_Relationship9">
       <ColNames>RequestStateId</ColNames>
       <ObjectId>18173</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="471" parent="299" name="IX_Relationship10">
+    <index id="474" parent="300" name="IX_Relationship10">
       <ColNames>ClientId</ColNames>
       <ObjectId>18158</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="472" parent="299" name="IX_Relationship11">
+    <index id="475" parent="300" name="IX_Relationship11">
       <ColNames>RequestTypeId</ColNames>
       <ObjectId>18159</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="473" parent="299" name="IX_Relationship12">
+    <index id="476" parent="300" name="IX_Relationship12">
       <ColNames>DepartmentId</ColNames>
       <ObjectId>18160</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="474" parent="299" name="IX_Relationship14">
+    <index id="477" parent="300" name="IX_Relationship14">
       <ColNames>WorkerId</ColNames>
       <ObjectId>18162</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="475" parent="299" name="PK_Request">
+    <key id="478" parent="300" name="PK_Request">
       <ObjectId>18135</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18134</UnderlyingIndexId>
     </key>
-    <key id="476" parent="299" name="RequestId">
+    <key id="479" parent="300" name="RequestId">
       <ObjectId>18147</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18146</UnderlyingIndexId>
     </key>
-    <key id="477" parent="299" name="Номер запроса">
+    <key id="480" parent="300" name="Номер запроса">
       <ObjectId>18157</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18156</UnderlyingIndexId>
     </key>
-    <trigger id="478" parent="299" name="requestStateUpdateT">
+    <trigger id="481" parent="300" name="requestStateUpdateT">
       <ColumnIndices>8</ColumnIndices>
       <Events>IU</Events>
       <ObjectId>18176</ObjectId>
       <StateNumber>1715</StateNumber>
       <CallRoutineId>17987</CallRoutineId>
     </trigger>
-    <column id="479" parent="300" name="id">
+    <column id="482" parent="301" name="id">
       <DefaultExpression>nextval(&apos;&quot;RequestState_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5688,14 +5710,14 @@ false Zulu
       <SequenceId>18056</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="480" parent="300" name="name">
+    <column id="483" parent="301" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="481" parent="300" name="PK_RequestState">
+    <index id="484" parent="301" name="PK_RequestState">
       <ColNames>id</ColNames>
       <ObjectId>18136</ObjectId>
       <Primary>1</Primary>
@@ -5703,25 +5725,25 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="482" parent="300" name="RequestStateName">
+    <index id="485" parent="301" name="RequestStateName">
       <ColNames>id</ColNames>
       <ObjectId>18148</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="483" parent="300" name="PK_RequestState">
+    <key id="486" parent="301" name="PK_RequestState">
       <ObjectId>18137</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18136</UnderlyingIndexId>
     </key>
-    <key id="484" parent="300" name="RequestStateName">
+    <key id="487" parent="301" name="RequestStateName">
       <ObjectId>18149</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18148</UnderlyingIndexId>
     </key>
-    <column id="485" parent="301" name="id">
+    <column id="488" parent="302" name="id">
       <DefaultExpression>nextval(&apos;&quot;RequestType_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5730,14 +5752,14 @@ false Zulu
       <SequenceId>18060</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="486" parent="301" name="name">
+    <column id="489" parent="302" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="487" parent="301" name="PK_RequestType">
+    <index id="490" parent="302" name="PK_RequestType">
       <ColNames>id</ColNames>
       <ObjectId>18138</ObjectId>
       <Primary>1</Primary>
@@ -5745,25 +5767,25 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="488" parent="301" name="RequestTypeId">
+    <index id="491" parent="302" name="RequestTypeId">
       <ColNames>id</ColNames>
       <ObjectId>18150</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="489" parent="301" name="PK_RequestType">
+    <key id="492" parent="302" name="PK_RequestType">
       <ObjectId>18139</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18138</UnderlyingIndexId>
     </key>
-    <key id="490" parent="301" name="RequestTypeId">
+    <key id="493" parent="302" name="RequestTypeId">
       <ObjectId>18151</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18150</UnderlyingIndexId>
     </key>
-    <column id="491" parent="302" name="id">
+    <column id="494" parent="303" name="id">
       <DefaultExpression>nextval(&apos;&quot;Worker_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -5772,65 +5794,65 @@ false Zulu
       <SequenceId>18067</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="492" parent="302" name="surname">
+    <column id="495" parent="303" name="surname">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="493" parent="302" name="name">
+    <column id="496" parent="303" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="494" parent="302" name="secondName">
+    <column id="497" parent="303" name="secondName">
       <Position>4</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(128)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="495" parent="302" name="DepartmentId">
+    <column id="498" parent="303" name="DepartmentId">
       <Position>5</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="496" parent="302" name="PositionId">
+    <column id="499" parent="303" name="PositionId">
       <Position>6</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="497" parent="302" name="password">
+    <column id="500" parent="303" name="password">
       <Position>7</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(64)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="498" parent="302" name="email">
+    <column id="501" parent="303" name="email">
       <Position>8</Position>
       <StateNumber>1715</StateNumber>
       <StoredType>varchar(64)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="499" parent="302" name="Relationship13">
+    <foreign-key id="502" parent="303" name="Relationship13">
       <ColNames>DepartmentId</ColNames>
       <ObjectId>18198</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17998</RefTableId>
     </foreign-key>
-    <foreign-key id="500" parent="302" name="Relationship17">
+    <foreign-key id="503" parent="303" name="Relationship17">
       <ColNames>PositionId</ColNames>
       <ObjectId>18218</ObjectId>
       <StateNumber>1715</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>18044</RefTableId>
     </foreign-key>
-    <index id="501" parent="302" name="PK_Worker">
+    <index id="504" parent="303" name="PK_Worker">
       <ColNames>id</ColNames>
       <ObjectId>18140</ObjectId>
       <Primary>1</Primary>
@@ -5838,32 +5860,32 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="502" parent="302" name="WorkerId">
+    <index id="505" parent="303" name="WorkerId">
       <ColNames>id</ColNames>
       <ObjectId>18152</ObjectId>
       <StateNumber>1715</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="503" parent="302" name="IX_Relationship13">
+    <index id="506" parent="303" name="IX_Relationship13">
       <ColNames>DepartmentId</ColNames>
       <ObjectId>18161</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="504" parent="302" name="IX_Relationship17">
+    <index id="507" parent="303" name="IX_Relationship17">
       <ColNames>PositionId</ColNames>
       <ObjectId>18165</ObjectId>
       <StateNumber>1715</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="505" parent="302" name="PK_Worker">
+    <key id="508" parent="303" name="PK_Worker">
       <ObjectId>18141</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18140</UnderlyingIndexId>
     </key>
-    <key id="506" parent="302" name="WorkerId">
+    <key id="509" parent="303" name="WorkerId">
       <ObjectId>18153</ObjectId>
       <StateNumber>1715</StateNumber>
       <UnderlyingIndexId>18152</UnderlyingIndexId>

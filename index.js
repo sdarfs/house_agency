@@ -10,6 +10,7 @@ const registrationRouter = require("./routes/registrationRouter");
 const requestRouter = require("./routes/requestRouter");
 const houseRouter = require("./routes/houseRouter");
 const clientRouter = require("./routes/clientRouter");
+const ReportRouter = require("./routes/ReportRouter")
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/static'));
@@ -18,7 +19,7 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true,
 }))
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use('/', indexRouter)
 app.use('/login', loginRouter)
@@ -26,6 +27,7 @@ app.use('/registration', registrationRouter)
 app.use('/requests', requestRouter)
 app.use('/houses', houseRouter)
 app.use('/client', clientRouter)
+app.use('/reports', ReportRouter)
 
 app.listen(port, () => {
 	console.log(`App listening on port ${port}`)
