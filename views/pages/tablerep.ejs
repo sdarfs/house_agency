@@ -42,19 +42,21 @@
 <body>
 
 <div class="bg-white p-16 rounded flex flex-col gap-5 relative min-h-128">
-    <h2 class="text-center font-semibold text-2xl w-72 block">Выгрузка отчета</h2>
+    <h2 class="text-center font-semibold text-2xl w-72 block">Выгрузка отчетов</h2>
     <form id="reportForm" action="/reports/export-client-report" method="POST">
         <label for="startDate">Выберите дату начала:</label>
         <input type="date" id="startDate" name="startDate" required>
 
         <label for="endDate">Выберите дату окончания:</label>
         <input type="date" id="endDate" name="endDate" required>
+        <button type="submit" class="bg-green-950 text-white p-2 rounded mt-4">
+            Выгрузить отчеты
+        </button>
 
-        <button type="submit">Выгрузить отчет</button>
-    </form>
     <button type="button" onclick="window.history.back()" class="bg-gray-300 text-black p-2 rounded mt-4">
         Назад
     </button>
+    </form>
 </div>
 </body>
 </html>
