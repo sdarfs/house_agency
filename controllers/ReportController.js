@@ -1,4 +1,3 @@
-// ReportController.js
 const XLSX = require('xlsx');
 const path = require('path');
 const { getRep, getCountUsers, request_status, getAverageCost} = require("../models/ReportModel");
